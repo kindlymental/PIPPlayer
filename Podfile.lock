@@ -1,0 +1,114 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (4.2.0)
+  - Bugly (2.5.0)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
+  - ComponentsPod (0.1.0):
+    - Masonry
+    - SDWebImage
+  - DZNEmptyDataSet (1.8.1)
+  - FBRetainCycleDetector (0.1.4)
+  - lottie-ios (2.5.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.7)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - ReactiveObjC (3.1.0)
+  - RESideMenu (4.0.7)
+  - SABlurImageView (5.0.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - XMLDictionary (1.4.1)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
+  - BaiduMapKit (= 4.2.0)
+  - Bugly (= 2.5.0)
+  - CocoaLumberjack (= 3.4.2)
+  - ComponentsPod
+  - DZNEmptyDataSet (= 1.8.1)
+  - lottie-ios (= 2.5.0)
+  - Masonry (= 1.1.0)
+  - MBProgressHUD (= 1.1.0)
+  - MJRefresh (= 3.1.15.7)
+  - MLeaksFinder (= 1.0.0)
+  - ReactiveObjC (= 3.1.0)
+  - RESideMenu (~> 4.0.7)
+  - SABlurImageView (= 5.0.0)
+  - SDWebImage (= 4.4.2)
+  - XMLDictionary
+  - YYCategories (= 1.0.4)
+  - YYModel (= 1.0.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - BaiduMapKit
+    - Bugly
+    - CocoaLumberjack
+    - DZNEmptyDataSet
+    - FBRetainCycleDetector
+    - lottie-ios
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MLeaksFinder
+    - ReactiveObjC
+    - RESideMenu
+    - SABlurImageView
+    - SDWebImage
+    - XMLDictionary
+    - YYCategories
+    - YYModel
+  https://github.com/kindlymental/Specs.git:
+    - ComponentsPod
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BaiduMapKit: b6a8f31b3d2e4e5cad4084512a0d9a3878638272
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  ComponentsPod: ce9270f86cc709e1fab56d52b26659b9a369c453
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SABlurImageView: 8640919c27208ada65e279ec17d7428408fedf89
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: a7e282700f7ebc812590b846e90918d1db344dc7
+
+COCOAPODS: 1.7.5

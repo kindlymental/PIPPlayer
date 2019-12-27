@@ -1,0 +1,52 @@
+//
+//  PrefixHeader.pch
+//  Music
+//
+//  Created by U on 2018/11/29.
+//  Copyright © 2018年 com.lyl.demo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "YYCategories.h"
+#import "Masonry.h"
+
+#if __has_include(<YYModel.h>)
+#import <YYModel.h>
+#else
+#import "YYModel.h"
+#endif /* __has_include */
+
+#if __has_include(<MJRefresh.h>)
+#import <MJRefresh.h>
+#else
+#import "MJRefresh.h"
+#endif /* __has_include */
+
+#if __has_include(<AFNetworking.h>)
+#import <AFNetworking.h>
+#else
+#import "AFNetworking.h"
+#endif /* __has_include */
+
+#if __has_include(<SDWebImageManager.h>)
+#import <SDWebImageManager.h>
+#else
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#endif /* __has_include */
+
+#import "ReactiveObjC.h"
+
+#import "RESideMenu.h"
+#import "AppDelegate.h"
+
+#import "ColorConst.h"
+#import "SizeConst.h"
+
+#endif /* PrefixHeader_pch */
+
