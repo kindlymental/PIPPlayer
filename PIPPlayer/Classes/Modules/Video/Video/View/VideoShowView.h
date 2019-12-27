@@ -15,6 +15,7 @@
 @property (nonatomic,strong) VideoInfoModel *videoInfo;
 
 @property (nonatomic,strong) void (^clickPlay)(void);
+@property (nonatomic,strong) void (^clickBack)(void);
 
 @end
 

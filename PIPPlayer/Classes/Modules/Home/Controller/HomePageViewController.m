@@ -10,8 +10,9 @@
 #import "BannerView.h"
 #import "BaseRequest.h"
 #import "BannerModel.h"
-#import "DiscoverVideoViewController.h"
 #import "HomeHotViewModel.h"
+#import "HomeHotTableViewCell.h"
+#import "VideoPlayerViewController.h"
 
 @interface HomePageViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
@@ -33,6 +34,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"首页";
     
     [self loadSubviews];
     
@@ -70,20 +73,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"HomeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    HomeHotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"HomeHotTableViewCell" owner:self options:nil]lastObject];
     }
-    
-    cell.textLabel.text = self.homeHotViewModel.hotModelArray[indexPath.row].name;
-    [cell.imageView sd_setImageWithURL: [NSURL URLWithString:self.homeHotViewModel.hotModelArray[indexPath.row].cover]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    if (indexPath.row < self.homeHotViewModel.hotModelArray.count) {
+        cell.model = self.homeHotViewModel.hotModelArray[indexPath.row];
+    }
     
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 100;
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    VideoPlayerViewController *vc = [[VideoPlayerViewController alloc]init];
+    vc.aid = 37904664;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - 数据请求
 

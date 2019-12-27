@@ -30,5 +30,7 @@
     
     return [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.edgeInsets)];
 }
+    
+    
 
 @end

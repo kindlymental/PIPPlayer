@@ -59,8 +59,8 @@
     discoverVc.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"发现" image:[self getOriginalImage:@"tab_custom_24x24_"] selectedImage:[self getOriginalImage:@"tab_custom_pre_24x24_"]];
     NavigationViewController *nav_discover = [[NavigationViewController alloc]initWithRootViewController:discoverVc];
     
-    HomePageViewController *mineVc = [[HomePageViewController alloc]init];
-    mineVc.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"发现" image:[self getOriginalImage:@"tab_mine_24x24_"] selectedImage:[self getOriginalImage:@"tab_mine_pre_24x24_"]];
+    MineViewController *mineVc = [[MineViewController alloc]init];
+    mineVc.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我的" image:[self getOriginalImage:@"tab_mine_24x24_"] selectedImage:[self getOriginalImage:@"tab_mine_pre_24x24_"]];
     NavigationViewController *nav_mine = [[NavigationViewController alloc]initWithRootViewController:mineVc];
     
     tabBarVc.viewControllers = @[nav_home, nav_discover, nav_mine];

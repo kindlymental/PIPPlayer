@@ -76,11 +76,12 @@
     
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
+//    _url = [NSURL URLWithString:@"https://media.w3.org/2010/05/sintel/trailer.mp4"];
+    
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:_url withOptions:options];
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.shouldAutoplay = YES;
     [self.view addSubview:self.player.view];
-    
     
     _danmaku = [[DanmakuControl alloc] initWithCid:_cid];
     _danmaku.delegate = self;

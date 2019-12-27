@@ -90,13 +90,13 @@
 
 #pragma mark - get / set
 
-- (UILabel *)messageLabel; {
+- (UILabel *)messageLabel {
     if (!_messageLabel) {
         _messageLabel = [[UILabel alloc] init];
         _messageLabel.textColor = [UIColor whiteColor];
         _messageLabel.font = [UIFont systemFontOfSize:13];
         _messageLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:_messageLabel];
+        [self.contentView addSubview:_messageLabel];
         [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.offset = 0;
             make.right.offset = 0;
@@ -107,12 +107,12 @@
     return _messageLabel;
 }
 
-- (UIProgressView *)progressView; {
+- (UIProgressView *)progressView {
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] init];
         _progressView.progressTintColor = [UIColor colorWithRed:219/255.0 green:92/255.0 blue:92/255.0 alpha:1];
         _progressView.trackTintColor = [UIColor colorWithWhite:86/255.0 alpha:1.0];
-        [self addSubview:_progressView];
+        [self.contentView addSubview:_progressView];
         [_progressView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.offset = 10;
             make.right.offset = -10;

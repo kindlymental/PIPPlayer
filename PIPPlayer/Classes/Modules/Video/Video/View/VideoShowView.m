@@ -17,6 +17,7 @@
 @implementation VideoShowView {
     
     UIButton *_playButton;  // 播放按钮
+    UIButton *_backButton;  // 返回按钮
 }
 
 - (instancetype)init {
@@ -36,6 +37,13 @@
     [self addSubview:_playButton];
     
     [self insertSubview:self.backgroundView belowSubview:_playButton];
+    
+    // 返回按钮
+    _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_backButton setImage:[UIImage imageNamed:@"videoinfo_back"] forState:UIControlStateNormal];
+    _backButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:_backButton];
+    [_backButton addTarget:self action:@selector(backToPrePage) forControlEvents:UIControlEventTouchUpInside];
 }
 
 + (BOOL)requiresConstraintBasedLayout {
@@ -47,6 +55,11 @@
     [_playButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.centerY.equalTo(self).mas_offset(15);
+    }];
+    [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).mas_offset(15);
+        make.left.equalTo(self).mas_offset(15);
+        make.width.height.mas_offset(30);
     }];
     
     [_backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,6 +93,10 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     _clickPlay ? _clickPlay() : NULL;
+}
+
+- (void)backToPrePage {
+    _clickBack ? _clickBack() : NULL;
 }
 
 #pragma mark - 懒加载
