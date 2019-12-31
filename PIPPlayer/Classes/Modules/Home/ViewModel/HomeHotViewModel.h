@@ -17,8 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 //RAC
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
-//@property (nonatomic,strong) NSMutableArray<HomeHotModel *> *hotModelArray;
-
 @property (nonatomic,strong) NSMutableArray<HomeOuterModel *> *homeModelArray;
 
 @end

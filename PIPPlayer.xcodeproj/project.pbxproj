@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A4E80FC59B223CF895ED08B /* Pods_PIPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AB0920F6ADABA25B6D9A6 /* Pods_PIPPlayer.framework */; };
 		770AA7B421BF9E5700DAC7C5 /* PIPPlayerDebug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 770AA7B321BF9E5700DAC7C5 /* PIPPlayerDebug.plist */; };
-		770AA7B621BFA07300DAC7C5 /* DebugAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770AA7B521BFA07300DAC7C5 /* DebugAssets.xcassets */; };
 		770C11AD21C1F45100355A75 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A121C1F31000355A75 /* libbz2.1.0.tbd */; };
 		770C11B021C1F5C700355A75 /* AppDelegate+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = 770C11AF21C1F5C700355A75 /* AppDelegate+Lua.m */; };
 		770C11B121C20BA800355A75 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A321C1F31A00355A75 /* libcompression.tbd */; };
@@ -46,7 +45,6 @@
 		77E7422621B116BD00A5D754 /* RequestCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7422521B116BD00A5D754 /* RequestCache.m */; };
 		77E7422921B11A8F00A5D754 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E7422821B11A8F00A5D754 /* BaseRequest.m */; };
 		77FF901321AFD005009DDAD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FF901121AFD005009DDAD6 /* Main.storyboard */; };
-		77FF901821AFD006009DDAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FF901621AFD006009DDAD6 /* LaunchScreen.storyboard */; };
 		77FF901B21AFD006009DDAD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FF901A21AFD006009DDAD6 /* main.m */; };
 		77FF902521AFD006009DDAD6 /* PIPPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FF902421AFD006009DDAD6 /* PIPPlayerTests.m */; };
 		77FF903B21AFEAC8009DDAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77FF903A21AFEAC8009DDAD6 /* Assets.xcassets */; };
@@ -78,6 +76,8 @@
 		A813548723B5FBC8004B652D /* VideoOwnerInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813547E23B5FBC8004B652D /* VideoOwnerInfoModel.m */; };
 		A813548823B5FBC8004B652D /* VideoPageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813547F23B5FBC8004B652D /* VideoPageInfoModel.m */; };
 		A813548923B5FBC8004B652D /* VideoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A813548123B5FBC8004B652D /* VideoShowView.m */; };
+		A81861E523B9C179000AF051 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A81861E423B9C179000AF051 /* Launch Screen.storyboard */; };
+		A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A85BB59F23BAE9D3007DEE82 /* HomeOuterModel.m */; };
 		A8704F4721B290AE00EAF83D /* UserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8704F4621B290AE00EAF83D /* UserInfoViewModel.m */; };
 		A8704F4D21B290DE00EAF83D /* ConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8704F4C21B290DE00EAF83D /* ConfigModel.m */; };
 		A8704F5021B291B100EAF83D /* ConfigViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8704F4F21B291B100EAF83D /* ConfigViewModel.m */; };
@@ -97,7 +97,6 @@
 /* Begin PBXFileReference section */
 		434AB0920F6ADABA25B6D9A6 /* Pods_PIPPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PIPPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770AA7B321BF9E5700DAC7C5 /* PIPPlayerDebug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PIPPlayerDebug.plist; sourceTree = "<group>"; };
-		770AA7B521BFA07300DAC7C5 /* DebugAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DebugAssets.xcassets; sourceTree = "<group>"; };
 		770C119B21C1E9A300355A75 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		770C11A121C1F31000355A75 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 		770C11A321C1F31A00355A75 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
@@ -171,7 +170,6 @@
 		77E7422821B11A8F00A5D754 /* BaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		77FF900821AFD005009DDAD6 /* 播放器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "播放器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FF901221AFD005009DDAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		77FF901721AFD006009DDAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77FF901921AFD006009DDAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77FF901A21AFD006009DDAD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77FF902021AFD006009DDAD6 /* PIPPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIPPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +233,9 @@
 		A813547F23B5FBC8004B652D /* VideoPageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPageInfoModel.m; sourceTree = "<group>"; };
 		A813548123B5FBC8004B652D /* VideoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoShowView.m; sourceTree = "<group>"; };
 		A813548223B5FBC8004B652D /* VideoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoShowView.h; sourceTree = "<group>"; };
+		A81861E423B9C179000AF051 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A85BB59E23BAE9D3007DEE82 /* HomeOuterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeOuterModel.h; sourceTree = "<group>"; };
+		A85BB59F23BAE9D3007DEE82 /* HomeOuterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeOuterModel.m; sourceTree = "<group>"; };
 		A8704F4521B290AE00EAF83D /* UserInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewModel.h; sourceTree = "<group>"; };
 		A8704F4621B290AE00EAF83D /* UserInfoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewModel.m; sourceTree = "<group>"; };
 		A8704F4B21B290DE00EAF83D /* ConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigModel.h; sourceTree = "<group>"; };
@@ -296,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				770AA7B321BF9E5700DAC7C5 /* PIPPlayerDebug.plist */,
-				770AA7B521BFA07300DAC7C5 /* DebugAssets.xcassets */,
 			);
 			path = "PIPPlayer-Debug";
 			sourceTree = "<group>";
@@ -618,11 +618,11 @@
 				A813543523B5B171004B652D /* Shell */,
 				77AAFB2521BE127A0057888C /* placeholder_url_image.png */,
 				77FF901121AFD005009DDAD6 /* Main.storyboard */,
-				77FF901621AFD006009DDAD6 /* LaunchScreen.storyboard */,
 				77FF901921AFD006009DDAD6 /* Info.plist */,
 				77FF901A21AFD006009DDAD6 /* main.m */,
 				77FF903A21AFEAC8009DDAD6 /* Assets.xcassets */,
 				77FF905221AFEDB0009DDAD6 /* PrefixHeader.pch */,
+				A81861E423B9C179000AF051 /* Launch Screen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -645,6 +645,8 @@
 			children = (
 				A813542423B4B7F8004B652D /* HomeHotModel.h */,
 				A813542523B4B7F8004B652D /* HomeHotModel.m */,
+				A85BB59E23BAE9D3007DEE82 /* HomeOuterModel.h */,
+				A85BB59F23BAE9D3007DEE82 /* HomeOuterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -956,10 +958,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A813543C23B5B212004B652D /* HomeHotTableViewCell.xib in Resources */,
-				770AA7B621BFA07300DAC7C5 /* DebugAssets.xcassets in Resources */,
 				77AAFB2C21BE6FB10057888C /* DiscoverVideoTableViewCell.xib in Resources */,
-				77FF901821AFD006009DDAD6 /* LaunchScreen.storyboard in Resources */,
 				77FF903B21AFEAC8009DDAD6 /* Assets.xcassets in Resources */,
+				A81861E523B9C179000AF051 /* Launch Screen.storyboard in Resources */,
 				77FF901321AFD005009DDAD6 /* Main.storyboard in Resources */,
 				776592BB21B530C600BB6CF8 /* MenuViewController.xib in Resources */,
 				77AAFB2621BE127A0057888C /* placeholder_url_image.png in Resources */,
@@ -1058,6 +1059,7 @@
 				77E7421D21B0DC0C00A5D754 /* ResponseSerializer.m in Sources */,
 				7757711C21C11345004E6A6C /* MediaPlayer.m in Sources */,
 				77FF905F21AFF05D009DDAD6 /* NavigationViewController.m in Sources */,
+				A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */,
 				77E7422921B11A8F00A5D754 /* BaseRequest.m in Sources */,
 				A8EBE6B521B28D2000B71D20 /* UserInfoModel.m in Sources */,
 				A813543B23B5B212004B652D /* HomeHotTableViewCell.m in Sources */,
@@ -1125,14 +1127,6 @@
 				77FF901221AFD005009DDAD6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		77FF901621AFD006009DDAD6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77FF901721AFD006009DDAD6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1256,6 +1250,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 67NV28A6E8;
@@ -1373,6 +1368,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 67NV28A6E8;
