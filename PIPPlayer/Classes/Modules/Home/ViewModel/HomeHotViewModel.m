@@ -31,16 +31,16 @@
             [request
              requestWithURLString:@"http://app.bilibili.com/x/v2/show?actionKey=appkey&appkey=27eb53fc9058f8c3&build=3470&channel=appstore&device=phone&mobi_app=iphone&plat=1&platform=ios&sign=1c8f22ff72d7cab05a94eb8b12a4c4cc&ts=1469603875&warm=1" method:HTTPMethodGet parameters:nil completionBlock:^(BaseRequest *request) {
                 if (request.responseCode == 0) {
-                    NSArray *arr = request.responseData[0][@"body"];
+            
+                    NSArray *arr = request.responseData;
                     
-                    self.hotModelArray = [NSMutableArray array];
+                    self.homeModelArray = [NSMutableArray array];
                     
                     for (NSDictionary *dic in arr) {
-                        HomeHotModel *model = [HomeHotModel yy_modelWithDictionary:dic];
-                        [self.hotModelArray addObject:model];
+                        HomeOuterModel *model = [HomeOuterModel yy_modelWithDictionary:dic];
+                        [self.homeModelArray addObject:model];
                     }
-                    
-                    [subscriber sendNext:self.hotModelArray];
+                    [subscriber sendNext:self.homeModelArray];
                 }
             }];
             return nil;

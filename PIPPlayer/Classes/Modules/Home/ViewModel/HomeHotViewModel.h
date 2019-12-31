@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HomeHotModel.h"
+#import "HomeOuterModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 //RAC
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
-@property (nonatomic,strong) NSMutableArray<HomeHotModel *> *hotModelArray;
+//@property (nonatomic,strong) NSMutableArray<HomeHotModel *> *hotModelArray;
+
+@property (nonatomic,strong) NSMutableArray<HomeOuterModel *> *homeModelArray;
 
 @end
 

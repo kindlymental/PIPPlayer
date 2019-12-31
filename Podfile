@@ -40,6 +40,8 @@ target 'PIPPlayer' do
     #blur effect
     pod 'SABlurImageView','5.0.0'   # swift类型库
      
+    pod "Texture",'2.6'  # AsyncDisplayKit
+
     #内部封装的组件库
     pod 'ComponentsPod'
 

@@ -10,4 +10,8 @@
 
 @implementation HomeHotModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"gotoType": @"goto"};
+}
+
 @end

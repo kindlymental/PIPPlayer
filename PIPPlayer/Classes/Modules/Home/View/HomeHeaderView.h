@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeOuterModel.h"
 
 @interface HomeHeaderView : UIView
 
+@property (nonatomic,strong) HomeOuterModel *outerModel;
+ 
 @end
 

@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *uri;
 @property (nonatomic, copy) NSString *rname;
+@property (nonatomic, copy) NSString *param;
+@property (nonatomic, copy) NSString *gotoType;
+@property (nonatomic, assign) BOOL *is_ad;
 
 @end
 

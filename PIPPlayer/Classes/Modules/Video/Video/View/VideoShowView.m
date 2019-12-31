@@ -57,9 +57,9 @@
         make.centerY.equalTo(self).mas_offset(15);
     }];
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).mas_offset(15);
-        make.left.equalTo(self).mas_offset(15);
-        make.width.height.mas_offset(30);
+        make.top.equalTo(self).mas_offset(10);
+        make.left.equalTo(self).mas_offset(10);
+        make.width.height.mas_offset(50);
     }];
     
     [_backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {

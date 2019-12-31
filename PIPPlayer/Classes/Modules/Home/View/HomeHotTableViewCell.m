@@ -58,7 +58,7 @@
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:[UIImage imageNamed:@"misc_battery_power_ico"]];
     self.titleLabel.text = model.title;
     self.typeLabel.text = [NSString stringWithFormat:@"%ld个喜欢",model.like];
-    self.nameLabel.text = model.name;
+    self.nameLabel.text = model.name ? model.name : model.rname;
     self.timesLabel.text = [NSString stringWithFormat:@"%ld观看",model.play];
 }
 

@@ -13,6 +13,7 @@
 #import "HomeHotViewModel.h"
 #import "HomeHotTableViewCell.h"
 #import "VideoPlayerViewController.h"
+#import "HomeHeaderView.h"
 
 @interface HomePageViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
@@ -64,11 +65,21 @@
 #pragma mark - UITableViewDelegate UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.homeHotViewModel.homeModelArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.homeHotViewModel.hotModelArray.count;
+    return self.homeHotViewModel.homeModelArray[section].body.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    HomeHeaderView *headerView = [[HomeHeaderView alloc]initWithFrame:CGRectZero];
+    headerView.outerModel = self.homeHotViewModel.homeModelArray[section];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 36;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,8 +90,8 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    if (indexPath.row < self.homeHotViewModel.hotModelArray.count) {
-        cell.model = self.homeHotViewModel.hotModelArray[indexPath.row];
+    if (indexPath.row < self.homeHotViewModel.homeModelArray[indexPath.section].body.count) {
+        cell.model = self.homeHotViewModel.homeModelArray[indexPath.section].body[indexPath.row];
     }
     
     return cell;
