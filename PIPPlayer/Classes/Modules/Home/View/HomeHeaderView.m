@@ -13,6 +13,9 @@
 // 文本
 @property (nonatomic,strong) UILabel *textLabel;
 
+// 更多
+@property (nonatomic,strong) UIButton *moreBtn;
+
 @end
 
 @implementation HomeHeaderView
@@ -28,10 +31,16 @@
     self.backgroundColor = [UIColor whiteColor];
     
     [self addSubview:self.textLabel];
+    [self addSubview:self.moreBtn];
     
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
         make.left.equalTo(self).mas_offset(10);
+    }];
+    
+    [self.moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self);
+        make.right.equalTo(self).mas_offset(-10);
     }];
 }
 
@@ -50,6 +59,19 @@
         _textLabel.font = [UIFont systemFontOfSize:14];
     }
     return _textLabel;
+}
+
+- (UIButton *)moreBtn {
+    if (!_moreBtn) {
+        _moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_moreBtn setTitle:@"查看更多" forState:UIControlStateNormal];
+        [_moreBtn setTitleColor:ColorRGB(31, 31, 31) forState:UIControlStateNormal];
+        _moreBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [[_moreBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            NSLog(@"---");
+        }];
+    }
+    return _moreBtn;
 }
 
 @end

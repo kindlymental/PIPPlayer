@@ -40,7 +40,10 @@
                         HomeOuterModel *model = [HomeOuterModel yy_modelWithDictionary:dic];
                         [self.homeModelArray addObject:model];
                     }
+                    
                     [subscriber sendNext:self.homeModelArray];
+                } else {
+                    
                 }
             }];
             return nil;
