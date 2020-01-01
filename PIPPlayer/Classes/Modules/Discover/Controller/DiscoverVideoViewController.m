@@ -33,9 +33,14 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    if (@available(iOS 13.0, *)) {
+//        self.modalInPresentation = true;
+    }
+    
     [self loadUI];
     [self loadData];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

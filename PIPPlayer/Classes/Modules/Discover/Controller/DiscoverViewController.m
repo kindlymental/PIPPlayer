@@ -46,7 +46,11 @@
 #endif
     DiscoverVideoViewController *vc = [[DiscoverVideoViewController alloc]init];
     vc.aid = 37904664;
-    [self.navigationController pushViewController:vc animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - 数据请求
