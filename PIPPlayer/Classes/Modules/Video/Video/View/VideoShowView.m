@@ -34,6 +34,7 @@
     _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_playButton setImage:[UIImage imageNamed:@"player_play"] forState:UIControlStateNormal];
     _playButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [_playButton addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_playButton];
     
     [self insertSubview:self.backgroundView belowSubview:_playButton];
@@ -76,8 +77,6 @@
     
     _videoInfo = videoInfo;
     
-    NSLog(@"%@",videoInfo);
-    
     [self.backgroundView removeFromSuperview];
     self.backgroundView = nil;
     
@@ -92,8 +91,7 @@
 
 #pragma mark - 事件
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+- (void)playAction {
     _clickPlay ? _clickPlay() : NULL;
 }
 

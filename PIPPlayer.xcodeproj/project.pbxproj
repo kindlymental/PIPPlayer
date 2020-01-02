@@ -29,7 +29,6 @@
 		77AAFB2421BE03800057888C /* DiscoverVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AAFB2321BE03800057888C /* DiscoverVideoViewController.m */; };
 		77AAFB2621BE127A0057888C /* placeholder_url_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 77AAFB2521BE127A0057888C /* placeholder_url_image.png */; };
 		77AAFB2B21BE6FB10057888C /* DiscoverVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AAFB2921BE6FB10057888C /* DiscoverVideoTableViewCell.m */; };
-		77AAFB2C21BE6FB10057888C /* DiscoverVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77AAFB2A21BE6FB10057888C /* DiscoverVideoTableViewCell.xib */; };
 		77ABE88621BA12FA00D0B3E7 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ABE88421BA12FA00D0B3E7 /* BannerView.m */; };
 		77ABE88B21BA1BF800D0B3E7 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ABE88A21BA1BF800D0B3E7 /* BannerModel.m */; };
 		77BC204821B67A19003A2D4C /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BC204521B67A19003A2D4C /* MineViewController.xib */; };
@@ -77,6 +76,13 @@
 		A813548823B5FBC8004B652D /* VideoPageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813547F23B5FBC8004B652D /* VideoPageInfoModel.m */; };
 		A813548923B5FBC8004B652D /* VideoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A813548123B5FBC8004B652D /* VideoShowView.m */; };
 		A81861E523B9C179000AF051 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A81861E423B9C179000AF051 /* Launch Screen.storyboard */; };
+		A850D4A523BDC341004F7695 /* MoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A423BDC341004F7695 /* MoviePlayerView.m */; };
+		A850D4A723BDC374004F7695 /* MoviePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A850D4A623BDC374004F7695 /* MoviePlayerView.xib */; };
+		A850D4AC23BDD9E5004F7695 /* VideoSid.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A923BDD9E4004F7695 /* VideoSid.m */; };
+		A850D4AD23BDD9E5004F7695 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4AA23BDD9E4004F7695 /* Video.m */; };
+		A850D4B123BDDC76004F7695 /* DiscoverVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4B023BDDC76004F7695 /* DiscoverVideoViewModel.m */; };
+		A850D4B623BDF361004F7695 /* FullView.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4B323BDF360004F7695 /* FullView.m */; };
+		A850D4B723BDF361004F7695 /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4B423BDF360004F7695 /* FullViewController.m */; };
 		A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A85BB59F23BAE9D3007DEE82 /* HomeOuterModel.m */; };
 		A8704F4721B290AE00EAF83D /* UserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8704F4621B290AE00EAF83D /* UserInfoViewModel.m */; };
 		A8704F4D21B290DE00EAF83D /* ConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8704F4C21B290DE00EAF83D /* ConfigModel.m */; };
@@ -140,7 +146,6 @@
 		77AAFB2521BE127A0057888C /* placeholder_url_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_url_image.png; sourceTree = "<group>"; };
 		77AAFB2821BE6FB10057888C /* DiscoverVideoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverVideoTableViewCell.h; sourceTree = "<group>"; };
 		77AAFB2921BE6FB10057888C /* DiscoverVideoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverVideoTableViewCell.m; sourceTree = "<group>"; };
-		77AAFB2A21BE6FB10057888C /* DiscoverVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverVideoTableViewCell.xib; sourceTree = "<group>"; };
 		77ABE88421BA12FA00D0B3E7 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		77ABE88521BA12FA00D0B3E7 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
 		77ABE88921BA1BF800D0B3E7 /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
@@ -234,6 +239,19 @@
 		A813548123B5FBC8004B652D /* VideoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoShowView.m; sourceTree = "<group>"; };
 		A813548223B5FBC8004B652D /* VideoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoShowView.h; sourceTree = "<group>"; };
 		A81861E423B9C179000AF051 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A850D4A323BDC341004F7695 /* MoviePlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviePlayerView.h; sourceTree = "<group>"; };
+		A850D4A423BDC341004F7695 /* MoviePlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerView.m; sourceTree = "<group>"; };
+		A850D4A623BDC374004F7695 /* MoviePlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
+		A850D4A823BDD9E4004F7695 /* VideoSid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSid.h; sourceTree = "<group>"; };
+		A850D4A923BDD9E4004F7695 /* VideoSid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSid.m; sourceTree = "<group>"; };
+		A850D4AA23BDD9E4004F7695 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		A850D4AB23BDD9E4004F7695 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		A850D4AF23BDDC76004F7695 /* DiscoverVideoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverVideoViewModel.h; sourceTree = "<group>"; };
+		A850D4B023BDDC76004F7695 /* DiscoverVideoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverVideoViewModel.m; sourceTree = "<group>"; };
+		A850D4B223BDF360004F7695 /* FullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullViewController.h; sourceTree = "<group>"; };
+		A850D4B323BDF360004F7695 /* FullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullView.m; sourceTree = "<group>"; };
+		A850D4B423BDF360004F7695 /* FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullViewController.m; sourceTree = "<group>"; };
+		A850D4B523BDF361004F7695 /* FullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullView.h; sourceTree = "<group>"; };
 		A85BB59E23BAE9D3007DEE82 /* HomeOuterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeOuterModel.h; sourceTree = "<group>"; };
 		A85BB59F23BAE9D3007DEE82 /* HomeOuterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeOuterModel.m; sourceTree = "<group>"; };
 		A8704F4521B290AE00EAF83D /* UserInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewModel.h; sourceTree = "<group>"; };
@@ -304,6 +322,7 @@
 		77102B8421B662EE00DA2930 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				A850D4AE23BDDC55004F7695 /* ViewModel */,
 				77AAFB2721BE6F7C0057888C /* View */,
 				77ABE88821BA1BDC00D0B3E7 /* Model */,
 				77102B8521B662EE00DA2930 /* Controller */,
@@ -418,7 +437,6 @@
 			children = (
 				77AAFB2821BE6FB10057888C /* DiscoverVideoTableViewCell.h */,
 				77AAFB2921BE6FB10057888C /* DiscoverVideoTableViewCell.m */,
-				77AAFB2A21BE6FB10057888C /* DiscoverVideoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +461,10 @@
 		77ABE88821BA1BDC00D0B3E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A850D4AB23BDD9E4004F7695 /* Video.h */,
+				A850D4AA23BDD9E4004F7695 /* Video.m */,
+				A850D4A823BDD9E4004F7695 /* VideoSid.h */,
+				A850D4A923BDD9E4004F7695 /* VideoSid.m */,
 				77ABE88921BA1BF800D0B3E7 /* BannerModel.h */,
 				77ABE88A21BA1BF800D0B3E7 /* BannerModel.m */,
 			);
@@ -462,6 +484,7 @@
 		77E741FD21B0D3C500A5D754 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A850D4A223BDC313004F7695 /* MoviePlayer */,
 				A813544A23B5F786004B652D /* Video */,
 				77102B8421B662EE00DA2930 /* Discover */,
 				A8704F4821B290CF00EAF83D /* Config */,
@@ -847,6 +870,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A850D4A223BDC313004F7695 /* MoviePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A850D4B523BDF361004F7695 /* FullView.h */,
+				A850D4B323BDF360004F7695 /* FullView.m */,
+				A850D4B223BDF360004F7695 /* FullViewController.h */,
+				A850D4B423BDF360004F7695 /* FullViewController.m */,
+				A850D4A323BDC341004F7695 /* MoviePlayerView.h */,
+				A850D4A423BDC341004F7695 /* MoviePlayerView.m */,
+				A850D4A623BDC374004F7695 /* MoviePlayerView.xib */,
+			);
+			path = MoviePlayer;
+			sourceTree = "<group>";
+		};
+		A850D4AE23BDDC55004F7695 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A850D4AF23BDDC76004F7695 /* DiscoverVideoViewModel.h */,
+				A850D4B023BDDC76004F7695 /* DiscoverVideoViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A8704F4821B290CF00EAF83D /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,9 +1004,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A813543C23B5B212004B652D /* HomeHotTableViewCell.xib in Resources */,
-				77AAFB2C21BE6FB10057888C /* DiscoverVideoTableViewCell.xib in Resources */,
 				77FF903B21AFEAC8009DDAD6 /* Assets.xcassets in Resources */,
 				A81861E523B9C179000AF051 /* Launch Screen.storyboard in Resources */,
+				A850D4A723BDC374004F7695 /* MoviePlayerView.xib in Resources */,
 				77FF901321AFD005009DDAD6 /* Main.storyboard in Resources */,
 				776592BB21B530C600BB6CF8 /* MenuViewController.xib in Resources */,
 				77AAFB2621BE127A0057888C /* placeholder_url_image.png in Resources */,
@@ -1048,7 +1094,9 @@
 				77FF905621AFEF90009DDAD6 /* BaseViewController.m in Sources */,
 				7757711B21C11345004E6A6C /* DanmakuControl.m in Sources */,
 				7757711921C11345004E6A6C /* DanmakuLabel.m in Sources */,
+				A850D4A523BDC341004F7695 /* MoviePlayerView.m in Sources */,
 				77E7420C21B0D3C500A5D754 /* HomePageViewController.m in Sources */,
+				A850D4B723BDF361004F7695 /* FullViewController.m in Sources */,
 				77FF901B21AFD006009DDAD6 /* main.m in Sources */,
 				A813546623B5F786004B652D /* DanmakuConfiguration.m in Sources */,
 				7757711821C11345004E6A6C /* DanmakuConfiguration.m in Sources */,
@@ -1062,6 +1110,7 @@
 				A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */,
 				77E7422921B11A8F00A5D754 /* BaseRequest.m in Sources */,
 				A8EBE6B521B28D2000B71D20 /* UserInfoModel.m in Sources */,
+				A850D4AD23BDD9E5004F7695 /* Video.m in Sources */,
 				A813543B23B5B212004B652D /* HomeHotTableViewCell.m in Sources */,
 				7757711A21C11345004E6A6C /* DanmakuRequest.m in Sources */,
 				A813546C23B5F786004B652D /* MediaPlayerControl.m in Sources */,
@@ -1087,18 +1136,21 @@
 				A813548923B5FBC8004B652D /* VideoShowView.m in Sources */,
 				7757711D21C11345004E6A6C /* MediaPlayerProgressView.m in Sources */,
 				A813546423B5F786004B652D /* DanmakuEntity.m in Sources */,
+				A850D4AC23BDD9E5004F7695 /* VideoSid.m in Sources */,
 				77AAFB2B21BE6FB10057888C /* DiscoverVideoTableViewCell.m in Sources */,
 				A813544923B5F523004B652D /* InspectableView.m in Sources */,
 				A8704F4D21B290DE00EAF83D /* ConfigModel.m in Sources */,
 				A813548823B5FBC8004B652D /* VideoPageInfoModel.m in Sources */,
 				77AAFB2121BDFAF90057888C /* UIViewController+LifeCircle.m in Sources */,
 				7757711E21C11345004E6A6C /* MediaPlayerControl.m in Sources */,
+				A850D4B123BDDC76004F7695 /* DiscoverVideoViewModel.m in Sources */,
 				77ABE88B21BA1BF800D0B3E7 /* BannerModel.m in Sources */,
 				77AAFB2421BE03800057888C /* DiscoverVideoViewController.m in Sources */,
 				A813548523B5FBC8004B652D /* VideoStatisticsInfoModel.m in Sources */,
 				A8704F5021B291B100EAF83D /* ConfigViewModel.m in Sources */,
 				A813546523B5F786004B652D /* DanmakuModel.m in Sources */,
 				A813548423B5FBC8004B652D /* VideoURLViewModel.m in Sources */,
+				A850D4B623BDF361004F7695 /* FullView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

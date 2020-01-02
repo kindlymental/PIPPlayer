@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoviePlayerView.h"
+@class Video;
 
 @interface DiscoverVideoTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) MoviePlayerView * playerView;
+@property (nonatomic, strong) UILabel          * timeLabel;
+@property (nonatomic, strong) UILabel          * titleLabel;
+@property (nonatomic, strong) UIButton          * playButton;
+
+@property (nonatomic, strong) Video            * video;
 
 @end
