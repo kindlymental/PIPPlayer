@@ -107,7 +107,8 @@
     [self.videoModel requestVideoURLWithVideoCid:_currentPage.cid success:^(NSURL *videoURL) {
         
         if (videoURL) {
-            [MediaPlayer playerWithURL:videoURL cid:self->_currentPage.cid title:self->_currentPage.part inViewController:weakSelf];
+            // 测试地址
+            [MediaPlayer playerWithURL:[NSURL URLWithString:@"http://vjs.zencdn.net/v/oceans.mp4"] cid:self->_currentPage.cid title:self->_currentPage.part inViewController:weakSelf];
         }
     } failure:^(NSString *errorMsg) {
         
@@ -132,6 +133,5 @@
     }
     return _showView;
 }
-
 
 @end

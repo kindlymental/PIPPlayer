@@ -76,6 +76,8 @@
     
     _videoInfo = videoInfo;
     
+    NSLog(@"%@",videoInfo);
+    
     [self.backgroundView removeFromSuperview];
     self.backgroundView = nil;
     
