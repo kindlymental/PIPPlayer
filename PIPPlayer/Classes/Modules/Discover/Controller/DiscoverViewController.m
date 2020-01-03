@@ -89,10 +89,30 @@ static NSString *ID = @"cell";
     return cell;
 }
 
+// 根据Cell位置隐藏并暂停播放
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.videoPlayer.index) {
+        [_videoPlayer.player pause];
+        _videoPlayer.hidden = YES;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_videoPlayer.player pause];
+    _videoPlayer.hidden = YES;
+//    VideoViewController *videoController = [VideoViewController shareVideoController];
+//    videoController.video = self.videoViewModel.videoArray[indexPath.row];
+//    [self.navigationController pushViewController:videoController animated:YES];
+}
+
+#pragma mark - 播放按钮点击事件
 - (void)playButtonAction:(UIButton *)sender {
+    _videoPlayer.index = sender.tag - 100;
     Video * video = _videoViewModel.videoArray[sender.tag - 100];
     [self.videoPlayer setUrlString:video.mp4_url];
-    self.videoPlayer.frame = CGRectMake(0, 240 + 260*(sender.tag - 100) + kScreenWidth/5 + 50  , kScreenWidth, (self.view.frame.size.width-20)/2);
+    self.videoPlayer.frame = CGRectMake(0,260*(sender.tag - 100) + kScreenWidth/5 + 50  , kScreenWidth, (self.view.frame.size.width-20)/2);
     [self.view addSubview:self.videoPlayer];
     [_videoPlayer.player play];
     [_videoPlayer showToolView:NO];
@@ -179,7 +199,7 @@ static NSString *ID = @"cell";
 
 - (BannerView *)bannerView {
     if (!_bannerView) {
-        _bannerView = [[BannerView alloc]initBannerViewWithFrame:CGRectMake(0, 0, ScreenWidth, 240) imageUrls:nil webUrls:nil timerInterval:4 noDataImage:@"misc_battery_power_ico" didSelect:^(NSUInteger Index) {
+        _bannerView = [[BannerView alloc]initBannerViewWithFrame:CGRectMake(0, 0, ScreenWidth, 0) imageUrls:nil webUrls:nil timerInterval:4 noDataImage:@"misc_battery_power_ico" didSelect:^(NSUInteger Index) {
             if ((Index - 1) >= 0 && (Index - 1) < self->_bannerView.webUrls.count) {
                 NSLog(@"%@",self->_bannerView.webUrls[Index-1]);
             }
