@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UILabel          * timeLabel;
 @property (nonatomic, strong) UILabel          * titleLabel;
 @property (nonatomic, strong) UIButton          * playButton;
+@property (nonatomic, strong) UIImageView      * backImage;
 
 @property (nonatomic, strong) Video            * video;
 

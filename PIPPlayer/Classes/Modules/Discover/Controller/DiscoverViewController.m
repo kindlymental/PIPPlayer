@@ -16,7 +16,7 @@
 #import "DiscoverVideoViewModel.h"
 #import "FullViewController.h"
 
-@interface DiscoverViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface DiscoverViewController () <UITableViewDelegate,UITableViewDataSource,MoviePlayerViewDelegate>
 
 /** Banner */
 // Banner
@@ -74,7 +74,7 @@ static NSString *ID = @"cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 260;
+    return 240;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,10 +110,11 @@ static NSString *ID = @"cell";
 #pragma mark - 播放按钮点击事件
 - (void)playButtonAction:(UIButton *)sender {
     _videoPlayer.index = sender.tag - 100;
-    Video * video = _videoViewModel.videoArray[sender.tag - 100];
+    Video *video = _videoViewModel.videoArray[sender.tag - 100];
     [self.videoPlayer setUrlString:video.mp4_url];
-    self.videoPlayer.frame = CGRectMake(0,260*(sender.tag - 100) + kScreenWidth/5 + 50  , kScreenWidth, (self.view.frame.size.width-20)/2);
-    [self.view addSubview:self.videoPlayer];
+    self.videoPlayer.frame = CGRectMake(0, 240 *(sender.tag - 100) + 40, kScreenWidth, 200);
+    [self.tableView addSubview:self.videoPlayer];
+    
     [_videoPlayer.player play];
     [_videoPlayer showToolView:NO];
     _videoPlayer.playOrPauseBtn.selected = YES;
@@ -236,6 +237,7 @@ static NSString *ID = @"cell";
 - (MoviePlayerView *)videoPlayer {
     if (!_videoPlayer) {
         _videoPlayer = [MoviePlayerView videoPlayView];
+        _videoPlayer.delegate = self;
     }
     return _videoPlayer;
 }

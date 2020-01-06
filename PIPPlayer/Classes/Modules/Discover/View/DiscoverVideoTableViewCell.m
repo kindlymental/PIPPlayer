@@ -31,6 +31,7 @@
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).mas_offset(10);
             make.top.equalTo(self).mas_offset(4);
+            make.height.mas_offset(40);
         }];
     }
     return _titleLabel;
@@ -45,9 +46,23 @@
         [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.titleLabel.mas_right).mas_offset(10);
             make.top.equalTo(self).mas_offset(4);
+            make.height.mas_offset(40);
         }];
     }
     return _timeLabel;
+}
+
+- (UIImageView *)backImage
+{
+    if (_backImage == nil) {
+        _backImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self.contentView addSubview:_backImage];
+        [_backImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.timeLabel.mas_bottom);
+            make.left.right.bottom.equalTo(self);
+        }];
+    }
+    return _backImage;
 }
 
 - (UIButton *)playButton {
@@ -58,7 +73,7 @@
         _playButton.titleLabel.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:_playButton];
         [_playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
+            make.center.equalTo(self.backImage);
             make.width.height.mas_offset(44);
         }];
     }
@@ -69,6 +84,7 @@
 {
     self.titleLabel.text = video.title;
     self.timeLabel.text = [video.ptime substringWithRange:NSMakeRange(12, 4)];
+    [self.backImage sd_setImageWithURL:[NSURL URLWithString:video.cover] placeholderImage:[UIImage imageNamed:@"misc_battery_power_ico"]];
     
     [self.playButton setImage:[UIImage imageNamed:@"player_play"] forState:UIControlStateNormal];
 }

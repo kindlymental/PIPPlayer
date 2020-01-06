@@ -335,8 +335,8 @@
 			children = (
 				77102B8621B662FE00DA2930 /* DiscoverViewController.h */,
 				77102B8721B662FE00DA2930 /* DiscoverViewController.m */,
-				77AAFB2221BE03800057888C /* DiscoverVideoViewController.h */,
 				77AAFB2321BE03800057888C /* DiscoverVideoViewController.m */,
+				77AAFB2221BE03800057888C /* DiscoverVideoViewController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -10,9 +10,6 @@
 
 @interface MoviePlayerView ()
 
-// imageView
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 // 工具栏
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -22,29 +19,45 @@
 // 记录当前是否显示了工具栏
 @property (assign, nonatomic) BOOL isShowToolView;
 
-/* 定时器 */
-@property (nonatomic, strong) NSTimer *progressTimer;
+/* 工具栏展示的时间 */
+@property (assign, nonatomic) NSTimeInterval showTime;
 
 /* 工具栏的显示和隐藏 */
 @property (nonatomic, strong) NSTimer *showTimer;
 
-/* 工具栏展示的时间 */
-@property (assign, nonatomic) NSTimeInterval showTime;
+/* 进度条定时器 */
+@property (nonatomic, strong) NSTimer *progressTimer;
 
-@property (nonatomic, strong) NSTimer * timer;
-
+/* 弹幕定时器 */
+@property (nonatomic, strong) NSTimer * danmuTimer;
 
 @end
 
 @implementation MoviePlayerView
 
-// 快速创建View的方法
+/// 初始化方法
 + (instancetype)videoPlayView
 {
     return [[[NSBundle mainBundle] loadNibNamed:@"MoviePlayerView" owner:nil options:nil] firstObject];
-    
- }
+}
 
+#pragma mark - 重写父类的方法
+
+/// 重新布局
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.playerLayer.frame = self.bounds;
+}
+
+/// 销毁
+- (void)dealloc
+{
+    [self.currentItem removeObserver:self forKeyPath:@"status" context:nil];
+}
+
+/// 创建
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -54,7 +67,7 @@
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     [self.imageView.layer addSublayer:self.playerLayer];
     
-    // 设置工具栏的状态
+    // 初始化状态
     self.toolView.alpha = 0;
     self.isShowToolView = NO;
     // 设置按钮的状态
@@ -65,26 +78,37 @@
     [self.progressSlider setMaximumTrackImage:[UIImage imageNamed:@"MaximumTrackImage"] forState:UIControlStateNormal];
     [self.progressSlider setMinimumTrackImage:[UIImage imageNamed:@"MinimumTrackImage"] forState:UIControlStateNormal];
     
+    // 显示工具条
     [self showToolView:YES];
     
 //    [self setupDanmakuView];
 //    [self setupDanmakuData];
-    
 }
 
-// 点击背景 是否显示工具的View
+#pragma mark - 点击背景 是否显示工具的View
+
 - (IBAction)tapAction:(UITapGestureRecognizer *)sender {
-    [self showToolView:!self.isShowToolView];
+    if (sender == nil) {
+        [self showToolView:NO];
+    } else {
+        self.isShowToolView = !self.isShowToolView;
+        [self showToolView: self.isShowToolView];
+    }
 }
 
-#pragma mark - 重新布局
-- (void)layoutSubviews
+- (void)showToolView:(BOOL)isShow
 {
-    [super layoutSubviews];
-    
-    self.playerLayer.frame = self.bounds;
+    if (self.progressSlider.tag == 100) {
+        self.progressSlider.tag = 20;
+        return;
+    }
+    [UIView animateWithDuration:1.0 animations:^{
+        self.toolView.alpha = isShow;
+        self.isShowToolView = isShow;
+    }];
 }
 
+#pragma mark - 赋值
 
 - (void)setUrlString:(NSString *)urlString {
     _urlString = urlString;
@@ -102,6 +126,8 @@
     // 添加视频播放结束通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:_currentItem];
 }
+
+#pragma mark - 视频播放完成后的通知方法
 
 - (void)moviePlayDidEnd:(NSNotification *)notification {
     __weak typeof(self) weakSelf = self;
@@ -127,7 +153,8 @@
     }
 }
 
-#pragma mark - 定时器操作
+#pragma mark - 进度条定时器操作
+
 - (void)addProgressTimer
 {
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
@@ -140,6 +167,56 @@
     self.progressTimer = nil;
 }
 
+- (void)updateProgressInfo
+{
+    self.timeLabel.text = [self timeString];
+    
+    self.progressSlider.value = CMTimeGetSeconds(self.player.currentTime) / CMTimeGetSeconds(self.player.currentItem.duration);
+    
+    if(self.progressSlider.value == 1)
+    {
+        self.progressSlider.value = 0;
+        self.progressSlider.tag = 100;
+        self.player = nil;
+        self.playOrPauseBtn.selected = NO;
+        self.toolView.alpha = 1;
+        
+        [self removeProgressTimer];
+        [self removeShowTimer];
+        self.timeLabel.text = @"00:00/00:00";
+        return;
+    }
+}
+
+#pragma mark - 工具条的展示 定时器处理
+
+- (void)addShowTimer
+{
+    self.showTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateShowTime) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.showTimer forMode:NSRunLoopCommonModes];
+}
+
+- (void)removeShowTimer
+{
+    [self.showTimer invalidate];
+    self.showTimer = nil;
+}
+
+- (void)updateShowTime
+{
+    self.showTime += 1;
+    
+    if (self.showTime > 2.0) {
+        [self tapAction:nil];
+        [self removeShowTimer];
+        
+        self.showTime = 0;
+    }
+}
+
+#pragma mark - 工具类方法
+
+// 格式化时间
 - (NSString *)timeString
 {
     NSTimeInterval duration = CMTimeGetSeconds(self.player.currentItem.duration);
@@ -161,68 +238,6 @@
     return [NSString stringWithFormat:@"%@/%@", currentString, durationString];
 }
 
-- (void)updateProgressInfo
-{
-    // 1.更新时间
-    self.timeLabel.text = [self timeString];
-    
-    self.progressSlider.value = CMTimeGetSeconds(self.player.currentTime) / CMTimeGetSeconds(self.player.currentItem.duration);
-    
-    if(self.progressSlider.value == 1)
-    {
-        self.progressSlider.value = 0;
-        self.progressSlider.tag = 100;
-        self.player = nil;
-        self.playOrPauseBtn.selected = NO;
-        self.toolView.alpha = 1;
-        
-        [self removeProgressTimer];
-        [self removeShowTimer];
-        self.timeLabel.text = @"00:00/00:00";
-        return;
-
-    }
-}
-
-- (void)addShowTimer
-{
-    self.showTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateShowTime) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.showTimer forMode:NSRunLoopCommonModes];
-}
-
-- (void)removeShowTimer
-{
-    [self.showTimer invalidate];
-    self.showTimer = nil;
-}
-
-- (void)updateShowTime
-{
-    self.showTime += 1;
-    
-    if (self.showTime > 2.0) {
-//        [self tapAction:nil];
-        [self removeShowTimer];
-        
-        self.showTime = 0;
-    }
-}
-
-- (void)showToolView:(BOOL)isShow
-{
-    if (self.progressSlider.tag == 100) {
-        
-        self.progressSlider.tag = 20;
-        return;
-    
-    }
-    [UIView animateWithDuration:1.0 animations:^{
-        self.toolView.alpha = !self.isShowToolView;
-        self.isShowToolView = !self.isShowToolView;
-    }];
-}
-
-
 #pragma mark - 事件
 
 - (IBAction)playOrPause:(UIButton *)sender {
@@ -236,8 +251,8 @@
         [self addShowTimer];
         [self addProgressTimer];
 //        if (_danmakuView.isPrepared) {
-//            if (!_timer) {
-//                _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimeCount) userInfo:nil repeats:YES];
+//            if (!_danmuTimer) {
+//                _danmuTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimeCount) userInfo:nil repeats:YES];
 //            }
 //            [_danmakuView start];
 //        }
@@ -245,9 +260,9 @@
         [self.player pause];
         [self removeShowTimer];
         [self removeProgressTimer];
-        if (_timer) {
-            [_timer invalidate];
-            _timer = nil;
+        if (_danmuTimer) {
+            [_danmuTimer invalidate];
+            _danmuTimer = nil;
         }
 //        [_danmakuView pause];
     }
@@ -284,6 +299,5 @@
     sender.selected = !sender.selected;
     [_delegate videoplayViewSwitchOrientation:sender.selected];
 }
-
 
 @end

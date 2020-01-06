@@ -22,10 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger index;
 
 @property (nonatomic,strong) AVPlayerItem *currentItem;
-@property (nonatomic,strong) AVPlayer *player;
+@property (nonatomic,strong, nullable) AVPlayer *player;
 @property (nonatomic, copy) NSString *urlString;
 
-
+// 背景图
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *playOrPauseBtn;
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 
