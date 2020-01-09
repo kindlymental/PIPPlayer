@@ -12,12 +12,21 @@
 #import "BannerModel.h"
 #import "HomeHotViewModel.h"
 #import "HomeHotTableViewCell.h"
+#import "HomeCollectionViewCell.h"
 #import "VideoPlayerViewController.h"
 #import "HomeHeaderView.h"
+#import "HomeSegmentView.h"
 
-@interface HomePageViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+static NSString *collectionCellID = @"collectionCellID";
+static NSString *homeTableViewCellID = @"homeTableViewCellID";
 
+@interface HomePageViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,HomeSegmentViewDelegate, UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property (nonatomic,strong) HomeSegmentView *segmentView;
+
+@property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 /** 接受全部数据的数组 */
 @property (nonatomic,strong) HomeHotViewModel *homeHotViewModel;
@@ -41,17 +50,63 @@
 
 - (void)loadSubviews {
     
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+    [self.view addSubview:self.segmentView];
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.tableView];
+    [self.scrollView addSubview:self.collectionView];
+    
+    [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
         make.top.equalTo(self.view).offset(UI_NAVIGATION_BAR_and_StatusBar_HEIGHT);
+        make.height.mas_offset(44);
     }];
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.segmentView.mas_bottom);
+        make.left.right.bottom.equalTo(self.view);
+    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.height.equalTo(self.scrollView);
+        make.width.mas_offset(ScreenWidth);
+    }];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.height.equalTo(self.scrollView);
+        make.left.equalTo(self.tableView.mas_right);
+        make.width.mas_offset(ScreenWidth);
+    }];
+}
+
+#pragma mark - HomeSegmentViewDelegate
+
+- (void)segmentChange:(NSInteger)index {
+    
+    [self.scrollView setContentOffset:CGPointMake(ScreenWidth * index, 0) animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+}
+
+#pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.homeHotViewModel.homeModelArray.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.homeHotViewModel.homeModelArray[section].body.count;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(10, 10, 0, 10); // 分别为上、左、下、右
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
+    if (indexPath.row < self.homeHotViewModel.homeModelArray[indexPath.section].body.count) {
+        cell.model = self.homeHotViewModel.homeModelArray[indexPath.section].body[indexPath.row];
+    }
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
@@ -75,17 +130,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"HomeCell";
-    HomeHotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"HomeHotTableViewCell" owner:self options:nil]lastObject];
-    }
+    HomeHotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeTableViewCellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     if (indexPath.row < self.homeHotViewModel.homeModelArray[indexPath.section].body.count) {
         cell.model = self.homeHotViewModel.homeModelArray[indexPath.section].body[indexPath.row];
     }
-    
     return cell;
 }
 
@@ -104,6 +154,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self.collectionView reloadData];
         });
     }];
 }
@@ -117,14 +168,49 @@
     return _homeHotViewModel;
 }
 
+- (UIScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc]init];
+        _scrollView.scrollEnabled = YES;
+        _scrollView.contentSize = CGSizeMake(ScreenWidth * 2, 0);
+    }
+    return _scrollView;
+}
+
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView registerNib:[UINib nibWithNibName:@"HomeHotTableViewCell" bundle:nil] forCellReuseIdentifier:homeTableViewCellID];
     }
     return _tableView;
+}
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+   
+        // 设置item的大小
+        CGFloat itemW = (kScreenWidth - 30) / 2;
+        layout.itemSize = CGSizeMake(itemW, itemW);
+        
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+        _collectionView.backgroundColor = ColorRGB(233, 233, 233);
+        [_collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionCellID];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+    }
+    return _collectionView;
+}
+
+- (HomeSegmentView *)segmentView {
+    if (!_segmentView) {
+        _segmentView = [[HomeSegmentView alloc]initWithFrame:CGRectZero];
+        _segmentView.delegate = self;
+    }
+    return _segmentView;
 }
 
 @end

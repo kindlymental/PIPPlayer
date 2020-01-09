@@ -20,33 +20,6 @@
 
 @implementation AppDelegate (Service)
 
-/**
- 初始化主框架UI
-
- @return 侧边栏
- */
-//- (RESideMenu *)initialMainUI {
-//
-//    HomePageViewController * HomeVc = [[HomePageViewController alloc]init];
-//    NavigationViewController * nav = [[NavigationViewController alloc]initWithRootViewController:HomeVc];
-//
-//    MenuViewController * leftVC = [[MenuViewController alloc]init];
-//
-//    RESideMenu * reslide = [[RESideMenu alloc]initWithContentViewController:nav leftMenuViewController:leftVC rightMenuViewController:nil];
-//
-//    reslide.fadeMenuView = NO;
-//    reslide.scaleMenuView = NO;
-//    reslide.scaleContentView = NO;
-//    reslide.contentViewInLandscapeOffsetCenterX = ScreenWidth *0.25;
-//    reslide.contentViewInPortraitOffsetCenterX  = ScreenWidth *0.25;
-//    reslide.contentViewShadowEnabled = NO;
-//    reslide.bouncesHorizontally = NO;
-//    reslide.animationDuration = 0.25f;
-//    reslide.parallaxEnabled = NO;
-//
-//    return reslide;
-//}
-
 - (UITabBarController *)initialMainUI {
     
     UITabBarController *tabBarVc = [[UITabBarController alloc]init];
@@ -65,6 +38,10 @@
     
     tabBarVc.viewControllers = @[nav_home, nav_discover, nav_mine];
     
+    // 设置tabBarItem样式
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
+       [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor systemPinkColor]} forState:UIControlStateSelected];
+       
     return tabBarVc;
 }
 

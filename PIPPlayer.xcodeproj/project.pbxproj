@@ -10,7 +10,6 @@
 		2A4E80FC59B223CF895ED08B /* Pods_PIPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AB0920F6ADABA25B6D9A6 /* Pods_PIPPlayer.framework */; };
 		770AA7B421BF9E5700DAC7C5 /* PIPPlayerDebug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 770AA7B321BF9E5700DAC7C5 /* PIPPlayerDebug.plist */; };
 		770C11AD21C1F45100355A75 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A121C1F31000355A75 /* libbz2.1.0.tbd */; };
-		770C11B021C1F5C700355A75 /* AppDelegate+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = 770C11AF21C1F5C700355A75 /* AppDelegate+Lua.m */; };
 		770C11B121C20BA800355A75 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A321C1F31A00355A75 /* libcompression.tbd */; };
 		77102B7921B65E1300DA2930 /* HomeSearchTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77102B7821B65E1300DA2930 /* HomeSearchTitleView.m */; };
 		77102B7C21B65EE600DA2930 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77102B7B21B65EE600DA2930 /* HomeHeaderView.m */; };
@@ -76,6 +75,10 @@
 		A813548823B5FBC8004B652D /* VideoPageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813547F23B5FBC8004B652D /* VideoPageInfoModel.m */; };
 		A813548923B5FBC8004B652D /* VideoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A813548123B5FBC8004B652D /* VideoShowView.m */; };
 		A81861E523B9C179000AF051 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A81861E423B9C179000AF051 /* Launch Screen.storyboard */; };
+		A82649BF23C6C91900AFAA23 /* HomeSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A82649BE23C6C91900AFAA23 /* HomeSegmentView.m */; };
+		A82649C123C6C92B00AFAA23 /* HomeSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82649C023C6C92B00AFAA23 /* HomeSegmentView.xib */; };
+		A82649C523C7289B00AFAA23 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A82649C323C7289B00AFAA23 /* HomeCollectionViewCell.m */; };
+		A82649C623C7289B00AFAA23 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82649C423C7289B00AFAA23 /* HomeCollectionViewCell.xib */; };
 		A850D4A523BDC341004F7695 /* MoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A423BDC341004F7695 /* MoviePlayerView.m */; };
 		A850D4A723BDC374004F7695 /* MoviePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A850D4A623BDC374004F7695 /* MoviePlayerView.xib */; };
 		A850D4AC23BDD9E5004F7695 /* VideoSid.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A923BDD9E4004F7695 /* VideoSid.m */; };
@@ -110,8 +113,6 @@
 		770C11A721C1F34300355A75 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		770C11A921C1F42400355A75 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		770C11AB21C1F43500355A75 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		770C11AE21C1F5C700355A75 /* AppDelegate+Lua.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Lua.h"; sourceTree = "<group>"; };
-		770C11AF21C1F5C700355A75 /* AppDelegate+Lua.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Lua.m"; sourceTree = "<group>"; };
 		77102B7521B6562C00DA2930 /* ColorConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorConst.h; sourceTree = "<group>"; };
 		77102B7621B6564E00DA2930 /* SizeConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SizeConst.h; sourceTree = "<group>"; };
 		77102B7721B65E1300DA2930 /* HomeSearchTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSearchTitleView.h; sourceTree = "<group>"; };
@@ -239,6 +240,12 @@
 		A813548123B5FBC8004B652D /* VideoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoShowView.m; sourceTree = "<group>"; };
 		A813548223B5FBC8004B652D /* VideoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoShowView.h; sourceTree = "<group>"; };
 		A81861E423B9C179000AF051 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A82649BD23C6C91900AFAA23 /* HomeSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSegmentView.h; sourceTree = "<group>"; };
+		A82649BE23C6C91900AFAA23 /* HomeSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSegmentView.m; sourceTree = "<group>"; };
+		A82649C023C6C92B00AFAA23 /* HomeSegmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSegmentView.xib; sourceTree = "<group>"; };
+		A82649C223C7289B00AFAA23 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		A82649C323C7289B00AFAA23 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		A82649C423C7289B00AFAA23 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		A850D4A323BDC341004F7695 /* MoviePlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviePlayerView.h; sourceTree = "<group>"; };
 		A850D4A423BDC341004F7695 /* MoviePlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerView.m; sourceTree = "<group>"; };
 		A850D4A623BDC374004F7695 /* MoviePlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
@@ -527,6 +534,12 @@
 				A813543823B5B212004B652D /* HomeHotTableViewCell.h */,
 				A813543923B5B212004B652D /* HomeHotTableViewCell.m */,
 				A813543A23B5B212004B652D /* HomeHotTableViewCell.xib */,
+				A82649BD23C6C91900AFAA23 /* HomeSegmentView.h */,
+				A82649BE23C6C91900AFAA23 /* HomeSegmentView.m */,
+				A82649C023C6C92B00AFAA23 /* HomeSegmentView.xib */,
+				A82649C223C7289B00AFAA23 /* HomeCollectionViewCell.h */,
+				A82649C323C7289B00AFAA23 /* HomeCollectionViewCell.m */,
+				A82649C423C7289B00AFAA23 /* HomeCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,8 +553,6 @@
 				77E7421121B0D3ED00A5D754 /* AppDelegate+Push.m */,
 				77E7421021B0D3ED00A5D754 /* AppDelegate+Service.h */,
 				77E7421421B0D3ED00A5D754 /* AppDelegate+Service.m */,
-				770C11AE21C1F5C700355A75 /* AppDelegate+Lua.h */,
-				770C11AF21C1F5C700355A75 /* AppDelegate+Lua.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1011,7 +1022,9 @@
 				776592BB21B530C600BB6CF8 /* MenuViewController.xib in Resources */,
 				77AAFB2621BE127A0057888C /* placeholder_url_image.png in Resources */,
 				77BC204821B67A19003A2D4C /* MineViewController.xib in Resources */,
+				A82649C623C7289B00AFAA23 /* HomeCollectionViewCell.xib in Resources */,
 				770AA7B421BF9E5700DAC7C5 /* PIPPlayerDebug.plist in Resources */,
+				A82649C123C6C92B00AFAA23 /* HomeSegmentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,6 +1100,7 @@
 				A813548323B5FBC8004B652D /* VideoInfoViewModel.m in Sources */,
 				77E7422321B115D000A5D754 /* Request.m in Sources */,
 				7757711621C11345004E6A6C /* DanmakuEntity.m in Sources */,
+				A82649C523C7289B00AFAA23 /* HomeCollectionViewCell.m in Sources */,
 				A813546823B5F786004B652D /* DanmakuRequest.m in Sources */,
 				77102B7C21B65EE600DA2930 /* HomeHeaderView.m in Sources */,
 				77BC204921B67A19003A2D4C /* MineViewController.m in Sources */,
@@ -1107,6 +1121,7 @@
 				77E7421D21B0DC0C00A5D754 /* ResponseSerializer.m in Sources */,
 				7757711C21C11345004E6A6C /* MediaPlayer.m in Sources */,
 				77FF905F21AFF05D009DDAD6 /* NavigationViewController.m in Sources */,
+				A82649BF23C6C91900AFAA23 /* HomeSegmentView.m in Sources */,
 				A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */,
 				77E7422921B11A8F00A5D754 /* BaseRequest.m in Sources */,
 				A8EBE6B521B28D2000B71D20 /* UserInfoModel.m in Sources */,
@@ -1129,7 +1144,6 @@
 				A813546923B5F786004B652D /* DanmakuControl.m in Sources */,
 				A813546723B5F786004B652D /* DanmakuLabel.m in Sources */,
 				77E7422621B116BD00A5D754 /* RequestCache.m in Sources */,
-				770C11B021C1F5C700355A75 /* AppDelegate+Lua.m in Sources */,
 				A813544723B5F523004B652D /* InspectableButton.m in Sources */,
 				A813546F23B5F7B8004B652D /* VideoPlayerViewController.m in Sources */,
 				77E7421621B0D3ED00A5D754 /* AppDelegate.m in Sources */,
