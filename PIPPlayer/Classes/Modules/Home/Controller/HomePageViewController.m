@@ -173,6 +173,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         _scrollView = [[UIScrollView alloc]init];
         _scrollView.scrollEnabled = YES;
         _scrollView.contentSize = CGSizeMake(ScreenWidth * 2, 0);
+        _scrollView.backgroundColor = ColorRGB(233, 233, 233);
     }
     return _scrollView;
 }
@@ -197,7 +198,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         layout.itemSize = CGSizeMake(itemW, itemW);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.backgroundColor = ColorRGB(233, 233, 233);
+        _collectionView.backgroundColor = [UIColor clearColor];
         [_collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionCellID];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

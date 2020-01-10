@@ -10,6 +10,9 @@
 
 @interface MineViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 
 @end
@@ -28,8 +31,22 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = UIColor.clearColor;
+    self.iconImgView.layer.masksToBounds = YES;
+    self.iconImgView.layer.cornerRadius = 35;
     
     self.nickNameLabel.text = @"兜里没糖";
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewClick:)];
+    [self.bgView addGestureRecognizer:gesture];
+    
+}
+
+- (void)viewClick:(UIView *)view {
+    NSLog(@"--%@",view);
+}
+
+- (IBAction)buttonAction:(id)sender {
+    NSLog(@"%@",sender);
 }
 
 @end
