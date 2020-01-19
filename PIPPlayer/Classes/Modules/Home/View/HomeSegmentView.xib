@@ -8,20 +8,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeSegmentView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeSegmentView">
+            <connections>
+                <outlet property="segmentedControl" destination="s5y-kY-ToM" id="nqt-eW-Dmc"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeSegmentView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-kY-ToM">
-                    <rect key="frame" x="161.5" y="8" width="91" height="43"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="91" placeholderIntrinsicHeight="46" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-kY-ToM">
+                    <rect key="frame" x="152" y="2" width="110" height="51"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="jwb-a8-Sga"/>
+                    </constraints>
                     <segments>
                         <segment title="热门"/>
                         <segment title="推荐"/>
                     </segments>
-                    <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="selectedSegmentTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="selectedSegmentTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <action selector="segmentChange:" destination="-1" eventType="valueChanged" id="gUp-nn-ZYu"/>
                     </connections>
@@ -29,13 +37,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="s5y-kY-ToM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8Od-oj-ppx"/>
+                <constraint firstItem="s5y-kY-ToM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="8Od-oj-ppx"/>
                 <constraint firstItem="s5y-kY-ToM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Fnj-HO-ZtA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="s5y-kY-ToM" secondAttribute="bottom" constant="8" id="gaC-Sf-ump"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="s5y-kY-ToM" secondAttribute="bottom" constant="6" id="gaC-Sf-ump"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="131.8840579710145" y="235.04464285714283"/>
+            <point key="canvasLocation" x="65" y="200"/>
         </view>
     </objects>
 </document>

@@ -50,18 +50,19 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 
 - (void)loadSubviews {
     
-    [self.view addSubview:self.segmentView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    // 导航
+    self.segmentView.frame = CGRectMake(0, 0, ScreenWidth, 44);
+    self.segmentView.intrinsicContentSize = CGSizeMake(ScreenWidth, 44);
+    self.navigationItem.titleView = self.segmentView;
+    
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.tableView];
     [self.scrollView addSubview:self.collectionView];
-    
-    [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.top.equalTo(self.view).offset(UI_NAVIGATION_BAR_and_StatusBar_HEIGHT);
-        make.height.mas_offset(44);
-    }];
+
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.segmentView.mas_bottom);
+        make.top.equalTo(self.view);
         make.left.right.bottom.equalTo(self.view);
     }];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

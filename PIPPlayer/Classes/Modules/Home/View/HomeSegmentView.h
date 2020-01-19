@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak) id<HomeSegmentViewDelegate> delegate;
 
+@property(nonatomic, assign) CGSize intrinsicContentSize;  
+
 @end
 
 NS_ASSUME_NONNULL_END

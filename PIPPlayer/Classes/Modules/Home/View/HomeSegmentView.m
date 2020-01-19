@@ -10,6 +10,8 @@
 
 @interface HomeSegmentView ()
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
 @end
 
 @implementation HomeSegmentView
@@ -18,6 +20,8 @@
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle]loadNibNamed:@"HomeSegmentView" owner:self options:nil] lastObject];
         self.backgroundColor = [UIColor clearColor];
+  
+        [self.segmentedControl setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:13]} forState:UIControlStateSelected];
     }
     return self;
 }
