@@ -15,7 +15,6 @@
     DanmakuEntity *_danmaku;
     
     NSTimeInterval _animateDuration;
-    
 }
 @end
 
@@ -53,8 +52,9 @@
     else if (danmaku.type == DanmakuTypeTop || danmaku.type == DanmakuTypeBottom) {
         self.frame = CGRectMake((self.superview.bounds.size.width - width) / 2, pointY, width, DanmakuLineHeight);
         
+        __weak typeof(self) weakself = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_animateDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (_status == DanmakuLabelStatusRuning) {
+            if (weakself.status == DanmakuLabelStatusRuning) {
                 [self animateCompletionHandleWithFinished:YES];
             }
         });
@@ -71,8 +71,6 @@
     _animateDuration -= CACurrentMediaTime() - _startTime;
     _status = DanmakuLabelStatusPaused;
     
-//    NSLog(@"%@: %lf", self.text, _animateDuration);
-    
     CALayer *layer = self.layer;
     CGRect rect = self.frame;
     if (layer.presentationLayer) {
@@ -81,8 +79,6 @@
     }
     self.frame = rect;
     [self.layer removeAllAnimations];
-    
-    
 }
 
 - (void)resume {
@@ -100,8 +96,9 @@
         }];
     }
     else if (_danmaku.type == DanmakuTypeTop || _danmaku.type == DanmakuTypeBottom) {
+        __weak typeof(self) weakself = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_animateDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (_status == DanmakuLabelStatusRuning) {
+            if (weakself.status == DanmakuLabelStatusRuning) {
                 [self animateCompletionHandleWithFinished:YES];
             }
         });

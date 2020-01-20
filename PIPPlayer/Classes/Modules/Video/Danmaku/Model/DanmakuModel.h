@@ -18,7 +18,7 @@
 /**
  *  获取需要显示的弹幕数据
  *
- *  @param time <#time description#>
+ *  @param time 视频时长
  */
 - (NSArray<DanmakuEntity *> *)getDisplayDanmakuWithTime:(NSTimeInterval)time;
 

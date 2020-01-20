@@ -11,18 +11,8 @@
 		770AA7B421BF9E5700DAC7C5 /* PIPPlayerDebug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 770AA7B321BF9E5700DAC7C5 /* PIPPlayerDebug.plist */; };
 		770C11AD21C1F45100355A75 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A121C1F31000355A75 /* libbz2.1.0.tbd */; };
 		770C11B121C20BA800355A75 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770C11A321C1F31A00355A75 /* libcompression.tbd */; };
-		77102B7921B65E1300DA2930 /* HomeSearchTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77102B7821B65E1300DA2930 /* HomeSearchTitleView.m */; };
 		77102B7C21B65EE600DA2930 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77102B7B21B65EE600DA2930 /* HomeHeaderView.m */; };
 		77102B8921B662FE00DA2930 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77102B8721B662FE00DA2930 /* DiscoverViewController.m */; };
-		7757711621C11345004E6A6C /* DanmakuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 775770FF21C11344004E6A6C /* DanmakuEntity.m */; };
-		7757711721C11345004E6A6C /* DanmakuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757710221C11344004E6A6C /* DanmakuModel.m */; };
-		7757711821C11345004E6A6C /* DanmakuConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757710321C11344004E6A6C /* DanmakuConfiguration.m */; };
-		7757711921C11345004E6A6C /* DanmakuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757710821C11344004E6A6C /* DanmakuLabel.m */; };
-		7757711A21C11345004E6A6C /* DanmakuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757710A21C11344004E6A6C /* DanmakuRequest.m */; };
-		7757711B21C11345004E6A6C /* DanmakuControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757710E21C11345004E6A6C /* DanmakuControl.m */; };
-		7757711C21C11345004E6A6C /* MediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757711321C11345004E6A6C /* MediaPlayer.m */; };
-		7757711D21C11345004E6A6C /* MediaPlayerProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757711421C11345004E6A6C /* MediaPlayerProgressView.m */; };
-		7757711E21C11345004E6A6C /* MediaPlayerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757711521C11345004E6A6C /* MediaPlayerControl.m */; };
 		776592BB21B530C600BB6CF8 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 776592BA21B530C600BB6CF8 /* MenuViewController.xib */; };
 		77AAFB2121BDFAF90057888C /* UIViewController+LifeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AAFB2021BDFAF90057888C /* UIViewController+LifeCircle.m */; };
 		77AAFB2421BE03800057888C /* DiscoverVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AAFB2321BE03800057888C /* DiscoverVideoViewController.m */; };
@@ -57,12 +47,6 @@
 		A813544723B5F523004B652D /* InspectableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A813544223B5F523004B652D /* InspectableButton.m */; };
 		A813544823B5F523004B652D /* InspectableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813544323B5F523004B652D /* InspectableLabel.m */; };
 		A813544923B5F523004B652D /* InspectableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A813544423B5F523004B652D /* InspectableView.m */; };
-		A813546423B5F786004B652D /* DanmakuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A813544D23B5F786004B652D /* DanmakuEntity.m */; };
-		A813546523B5F786004B652D /* DanmakuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813545023B5F786004B652D /* DanmakuModel.m */; };
-		A813546623B5F786004B652D /* DanmakuConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A813545123B5F786004B652D /* DanmakuConfiguration.m */; };
-		A813546723B5F786004B652D /* DanmakuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A813545623B5F786004B652D /* DanmakuLabel.m */; };
-		A813546823B5F786004B652D /* DanmakuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A813545823B5F786004B652D /* DanmakuRequest.m */; };
-		A813546923B5F786004B652D /* DanmakuControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A813545C23B5F786004B652D /* DanmakuControl.m */; };
 		A813546A23B5F786004B652D /* MediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A813546123B5F786004B652D /* MediaPlayer.m */; };
 		A813546B23B5F786004B652D /* MediaPlayerProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A813546223B5F786004B652D /* MediaPlayerProgressView.m */; };
 		A813546C23B5F786004B652D /* MediaPlayerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A813546323B5F786004B652D /* MediaPlayerControl.m */; };
@@ -79,6 +63,13 @@
 		A82649C123C6C92B00AFAA23 /* HomeSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82649C023C6C92B00AFAA23 /* HomeSegmentView.xib */; };
 		A82649C523C7289B00AFAA23 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A82649C323C7289B00AFAA23 /* HomeCollectionViewCell.m */; };
 		A82649C623C7289B00AFAA23 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82649C423C7289B00AFAA23 /* HomeCollectionViewCell.xib */; };
+		A83CF8D223D58574002A5F5F /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8D123D58574002A5F5F /* UIButton+EnlargeTouchArea.m */; };
+		A83CF8E523D589D9002A5F5F /* DanmakuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8D523D589D8002A5F5F /* DanmakuEntity.m */; };
+		A83CF8E723D589D9002A5F5F /* DanmakuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8D923D589D8002A5F5F /* DanmakuModel.m */; };
+		A83CF8E823D589D9002A5F5F /* DanmakuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8DD23D589D8002A5F5F /* DanmakuLabel.m */; };
+		A83CF8E923D589D9002A5F5F /* DanmakuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8DF23D589D8002A5F5F /* DanmakuRequest.m */; };
+		A83CF8EA23D589D9002A5F5F /* DanmakuControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8E423D589D8002A5F5F /* DanmakuControl.m */; };
+		A83CF8ED23D58A10002A5F5F /* DanmakuConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF8EB23D58A0F002A5F5F /* DanmakuConfiguration.m */; };
 		A850D4A523BDC341004F7695 /* MoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A423BDC341004F7695 /* MoviePlayerView.m */; };
 		A850D4A723BDC374004F7695 /* MoviePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A850D4A623BDC374004F7695 /* MoviePlayerView.xib */; };
 		A850D4AC23BDD9E5004F7695 /* VideoSid.m in Sources */ = {isa = PBXBuildFile; fileRef = A850D4A923BDD9E4004F7695 /* VideoSid.m */; };
@@ -115,30 +106,10 @@
 		770C11AB21C1F43500355A75 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		77102B7521B6562C00DA2930 /* ColorConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorConst.h; sourceTree = "<group>"; };
 		77102B7621B6564E00DA2930 /* SizeConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SizeConst.h; sourceTree = "<group>"; };
-		77102B7721B65E1300DA2930 /* HomeSearchTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSearchTitleView.h; sourceTree = "<group>"; };
-		77102B7821B65E1300DA2930 /* HomeSearchTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSearchTitleView.m; sourceTree = "<group>"; };
 		77102B7A21B65EE600DA2930 /* HomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
 		77102B7B21B65EE600DA2930 /* HomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
 		77102B8621B662FE00DA2930 /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		77102B8721B662FE00DA2930 /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		775770FF21C11344004E6A6C /* DanmakuEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuEntity.m; sourceTree = "<group>"; };
-		7757710021C11344004E6A6C /* DanmakuEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuEntity.h; sourceTree = "<group>"; };
-		7757710221C11344004E6A6C /* DanmakuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuModel.m; sourceTree = "<group>"; };
-		7757710321C11344004E6A6C /* DanmakuConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuConfiguration.m; sourceTree = "<group>"; };
-		7757710421C11344004E6A6C /* DanmakuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuModel.h; sourceTree = "<group>"; };
-		7757710521C11344004E6A6C /* DanmakuConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuConfiguration.h; sourceTree = "<group>"; };
-		7757710721C11344004E6A6C /* DanmakuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuLabel.h; sourceTree = "<group>"; };
-		7757710821C11344004E6A6C /* DanmakuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuLabel.m; sourceTree = "<group>"; };
-		7757710A21C11344004E6A6C /* DanmakuRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuRequest.m; sourceTree = "<group>"; };
-		7757710B21C11345004E6A6C /* DanmakuRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuRequest.h; sourceTree = "<group>"; };
-		7757710D21C11345004E6A6C /* DanmakuControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuControl.h; sourceTree = "<group>"; };
-		7757710E21C11345004E6A6C /* DanmakuControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuControl.m; sourceTree = "<group>"; };
-		7757711021C11345004E6A6C /* MediaPlayerProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerProgressView.h; sourceTree = "<group>"; };
-		7757711121C11345004E6A6C /* MediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
-		7757711221C11345004E6A6C /* MediaPlayerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerControl.h; sourceTree = "<group>"; };
-		7757711321C11345004E6A6C /* MediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayer.m; sourceTree = "<group>"; };
-		7757711421C11345004E6A6C /* MediaPlayerProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerProgressView.m; sourceTree = "<group>"; };
-		7757711521C11345004E6A6C /* MediaPlayerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerControl.m; sourceTree = "<group>"; };
 		776592BA21B530C600BB6CF8 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		77AAFB1F21BDFAF90057888C /* UIViewController+LifeCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LifeCircle.h"; sourceTree = "<group>"; };
 		77AAFB2021BDFAF90057888C /* UIViewController+LifeCircle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LifeCircle.m"; sourceTree = "<group>"; };
@@ -205,18 +176,6 @@
 		A813544423B5F523004B652D /* InspectableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableView.m; sourceTree = "<group>"; };
 		A813544523B5F523004B652D /* InspectableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableLabel.h; sourceTree = "<group>"; };
 		A813544623B5F523004B652D /* InspectableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableView.h; sourceTree = "<group>"; };
-		A813544D23B5F786004B652D /* DanmakuEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuEntity.m; sourceTree = "<group>"; };
-		A813544E23B5F786004B652D /* DanmakuEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuEntity.h; sourceTree = "<group>"; };
-		A813545023B5F786004B652D /* DanmakuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuModel.m; sourceTree = "<group>"; };
-		A813545123B5F786004B652D /* DanmakuConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuConfiguration.m; sourceTree = "<group>"; };
-		A813545223B5F786004B652D /* DanmakuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuModel.h; sourceTree = "<group>"; };
-		A813545323B5F786004B652D /* DanmakuConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuConfiguration.h; sourceTree = "<group>"; };
-		A813545523B5F786004B652D /* DanmakuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuLabel.h; sourceTree = "<group>"; };
-		A813545623B5F786004B652D /* DanmakuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuLabel.m; sourceTree = "<group>"; };
-		A813545823B5F786004B652D /* DanmakuRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuRequest.m; sourceTree = "<group>"; };
-		A813545923B5F786004B652D /* DanmakuRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuRequest.h; sourceTree = "<group>"; };
-		A813545B23B5F786004B652D /* DanmakuControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuControl.h; sourceTree = "<group>"; };
-		A813545C23B5F786004B652D /* DanmakuControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuControl.m; sourceTree = "<group>"; };
 		A813545E23B5F786004B652D /* MediaPlayerProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerProgressView.h; sourceTree = "<group>"; };
 		A813545F23B5F786004B652D /* MediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
 		A813546023B5F786004B652D /* MediaPlayerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerControl.h; sourceTree = "<group>"; };
@@ -246,6 +205,20 @@
 		A82649C223C7289B00AFAA23 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		A82649C323C7289B00AFAA23 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		A82649C423C7289B00AFAA23 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		A83CF8D023D58574002A5F5F /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		A83CF8D123D58574002A5F5F /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		A83CF8D523D589D8002A5F5F /* DanmakuEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuEntity.m; sourceTree = "<group>"; };
+		A83CF8D623D589D8002A5F5F /* DanmakuEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuEntity.h; sourceTree = "<group>"; };
+		A83CF8D923D589D8002A5F5F /* DanmakuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuModel.m; sourceTree = "<group>"; };
+		A83CF8DA23D589D8002A5F5F /* DanmakuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuModel.h; sourceTree = "<group>"; };
+		A83CF8DC23D589D8002A5F5F /* DanmakuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuLabel.h; sourceTree = "<group>"; };
+		A83CF8DD23D589D8002A5F5F /* DanmakuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuLabel.m; sourceTree = "<group>"; };
+		A83CF8DF23D589D8002A5F5F /* DanmakuRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuRequest.m; sourceTree = "<group>"; };
+		A83CF8E023D589D8002A5F5F /* DanmakuRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuRequest.h; sourceTree = "<group>"; };
+		A83CF8E323D589D8002A5F5F /* DanmakuControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuControl.h; sourceTree = "<group>"; };
+		A83CF8E423D589D8002A5F5F /* DanmakuControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuControl.m; sourceTree = "<group>"; };
+		A83CF8EB23D58A0F002A5F5F /* DanmakuConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuConfiguration.m; sourceTree = "<group>"; };
+		A83CF8EC23D58A0F002A5F5F /* DanmakuConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmakuConfiguration.h; sourceTree = "<group>"; };
 		A850D4A323BDC341004F7695 /* MoviePlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviePlayerView.h; sourceTree = "<group>"; };
 		A850D4A423BDC341004F7695 /* MoviePlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerView.m; sourceTree = "<group>"; };
 		A850D4A623BDC374004F7695 /* MoviePlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
@@ -348,93 +321,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		775770FC21C11344004E6A6C /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				775770FD21C11344004E6A6C /* Danmaku */,
-				7757710F21C11345004E6A6C /* Player */,
-			);
-			name = Video;
-			path = Modules/Video;
-			sourceTree = "<group>";
-		};
-		775770FD21C11344004E6A6C /* Danmaku */ = {
-			isa = PBXGroup;
-			children = (
-				7757710C21C11345004E6A6C /* Control */,
-				775770FE21C11344004E6A6C /* Entity */,
-				7757710121C11344004E6A6C /* Model */,
-				7757710921C11344004E6A6C /* Request */,
-				7757710621C11344004E6A6C /* View */,
-			);
-			path = Danmaku;
-			sourceTree = "<group>";
-		};
-		775770FE21C11344004E6A6C /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				7757710021C11344004E6A6C /* DanmakuEntity.h */,
-				775770FF21C11344004E6A6C /* DanmakuEntity.m */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		7757710121C11344004E6A6C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7757710521C11344004E6A6C /* DanmakuConfiguration.h */,
-				7757710321C11344004E6A6C /* DanmakuConfiguration.m */,
-				7757710421C11344004E6A6C /* DanmakuModel.h */,
-				7757710221C11344004E6A6C /* DanmakuModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7757710621C11344004E6A6C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7757710721C11344004E6A6C /* DanmakuLabel.h */,
-				7757710821C11344004E6A6C /* DanmakuLabel.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7757710921C11344004E6A6C /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				7757710B21C11345004E6A6C /* DanmakuRequest.h */,
-				7757710A21C11344004E6A6C /* DanmakuRequest.m */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		7757710C21C11345004E6A6C /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				7757710D21C11345004E6A6C /* DanmakuControl.h */,
-				7757710E21C11345004E6A6C /* DanmakuControl.m */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		7757710F21C11345004E6A6C /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				7757711121C11345004E6A6C /* MediaPlayer.h */,
-				7757711321C11345004E6A6C /* MediaPlayer.m */,
-				7757711221C11345004E6A6C /* MediaPlayerControl.h */,
-				7757711521C11345004E6A6C /* MediaPlayerControl.m */,
-				7757711021C11345004E6A6C /* MediaPlayerProgressView.h */,
-				7757711421C11345004E6A6C /* MediaPlayerProgressView.m */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
 		77AAFB1B21BDFACB0057888C /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				77AAFB1F21BDFAF90057888C /* UIViewController+LifeCircle.h */,
 				77AAFB2021BDFAF90057888C /* UIViewController+LifeCircle.m */,
+				A83CF8D023D58574002A5F5F /* UIButton+EnlargeTouchArea.h */,
+				A83CF8D123D58574002A5F5F /* UIButton+EnlargeTouchArea.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -527,8 +420,6 @@
 		77E7420621B0D3C500A5D754 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77102B7721B65E1300DA2930 /* HomeSearchTitleView.h */,
-				77102B7821B65E1300DA2930 /* HomeSearchTitleView.m */,
 				77102B7A21B65EE600DA2930 /* HomeHeaderView.h */,
 				77102B7B21B65EE600DA2930 /* HomeHeaderView.m */,
 				A813543823B5B212004B652D /* HomeHotTableViewCell.h */,
@@ -635,7 +526,6 @@
 			isa = PBXGroup;
 			children = (
 				A813543D23B5F481004B652D /* CustomView */,
-				775770FC21C11344004E6A6C /* Video */,
 				77AAFB1B21BDFACB0057888C /* Category */,
 				77E7422A21B11B4F00A5D754 /* Macro */,
 				77E7421821B0D46300A5D754 /* Common */,
@@ -720,72 +610,13 @@
 		A813544A23B5F786004B652D /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				A83CF8D323D589D8002A5F5F /* Danmaku */,
 				A813547123B5FBC8004B652D /* Video */,
-				A813544B23B5F786004B652D /* Danmaku */,
 				A813545D23B5F786004B652D /* Player */,
 				A813546D23B5F7B8004B652D /* VideoPlayerViewController.h */,
 				A813546E23B5F7B8004B652D /* VideoPlayerViewController.m */,
 			);
 			path = Video;
-			sourceTree = "<group>";
-		};
-		A813544B23B5F786004B652D /* Danmaku */ = {
-			isa = PBXGroup;
-			children = (
-				A813544C23B5F786004B652D /* Entity */,
-				A813544F23B5F786004B652D /* Model */,
-				A813545423B5F786004B652D /* View */,
-				A813545723B5F786004B652D /* Request */,
-				A813545A23B5F786004B652D /* Control */,
-			);
-			path = Danmaku;
-			sourceTree = "<group>";
-		};
-		A813544C23B5F786004B652D /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				A813544D23B5F786004B652D /* DanmakuEntity.m */,
-				A813544E23B5F786004B652D /* DanmakuEntity.h */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		A813544F23B5F786004B652D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A813545023B5F786004B652D /* DanmakuModel.m */,
-				A813545123B5F786004B652D /* DanmakuConfiguration.m */,
-				A813545223B5F786004B652D /* DanmakuModel.h */,
-				A813545323B5F786004B652D /* DanmakuConfiguration.h */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A813545423B5F786004B652D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A813545523B5F786004B652D /* DanmakuLabel.h */,
-				A813545623B5F786004B652D /* DanmakuLabel.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A813545723B5F786004B652D /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				A813545823B5F786004B652D /* DanmakuRequest.m */,
-				A813545923B5F786004B652D /* DanmakuRequest.h */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		A813545A23B5F786004B652D /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				A813545B23B5F786004B652D /* DanmakuControl.h */,
-				A813545C23B5F786004B652D /* DanmakuControl.m */,
-			);
-			path = Control;
 			sourceTree = "<group>";
 		};
 		A813545D23B5F786004B652D /* Player */ = {
@@ -879,6 +710,65 @@
 				A8704F4621B290AE00EAF83D /* UserInfoViewModel.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A83CF8D323D589D8002A5F5F /* Danmaku */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8E223D589D8002A5F5F /* Control */,
+				A83CF8D423D589D8002A5F5F /* Entity */,
+				A83CF8D823D589D8002A5F5F /* Model */,
+				A83CF8DE23D589D8002A5F5F /* Request */,
+				A83CF8DB23D589D8002A5F5F /* View */,
+			);
+			path = Danmaku;
+			sourceTree = "<group>";
+		};
+		A83CF8D423D589D8002A5F5F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8D623D589D8002A5F5F /* DanmakuEntity.h */,
+				A83CF8D523D589D8002A5F5F /* DanmakuEntity.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A83CF8D823D589D8002A5F5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8DA23D589D8002A5F5F /* DanmakuModel.h */,
+				A83CF8D923D589D8002A5F5F /* DanmakuModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A83CF8DB23D589D8002A5F5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8DC23D589D8002A5F5F /* DanmakuLabel.h */,
+				A83CF8DD23D589D8002A5F5F /* DanmakuLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A83CF8DE23D589D8002A5F5F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8E023D589D8002A5F5F /* DanmakuRequest.h */,
+				A83CF8DF23D589D8002A5F5F /* DanmakuRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		A83CF8E223D589D8002A5F5F /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				A83CF8EC23D58A0F002A5F5F /* DanmakuConfiguration.h */,
+				A83CF8EB23D58A0F002A5F5F /* DanmakuConfiguration.m */,
+				A83CF8E323D589D8002A5F5F /* DanmakuControl.h */,
+				A83CF8E423D589D8002A5F5F /* DanmakuControl.m */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		A850D4A223BDC313004F7695 /* MoviePlayer */ = {
@@ -1099,27 +989,20 @@
 			files = (
 				A813548323B5FBC8004B652D /* VideoInfoViewModel.m in Sources */,
 				77E7422321B115D000A5D754 /* Request.m in Sources */,
-				7757711621C11345004E6A6C /* DanmakuEntity.m in Sources */,
 				A82649C523C7289B00AFAA23 /* HomeCollectionViewCell.m in Sources */,
-				A813546823B5F786004B652D /* DanmakuRequest.m in Sources */,
+				A83CF8E723D589D9002A5F5F /* DanmakuModel.m in Sources */,
 				77102B7C21B65EE600DA2930 /* HomeHeaderView.m in Sources */,
 				77BC204921B67A19003A2D4C /* MineViewController.m in Sources */,
 				77E7421721B0D3ED00A5D754 /* AppDelegate+Service.m in Sources */,
 				77FF905621AFEF90009DDAD6 /* BaseViewController.m in Sources */,
-				7757711B21C11345004E6A6C /* DanmakuControl.m in Sources */,
-				7757711921C11345004E6A6C /* DanmakuLabel.m in Sources */,
 				A850D4A523BDC341004F7695 /* MoviePlayerView.m in Sources */,
 				77E7420C21B0D3C500A5D754 /* HomePageViewController.m in Sources */,
 				A850D4B723BDF361004F7695 /* FullViewController.m in Sources */,
 				77FF901B21AFD006009DDAD6 /* main.m in Sources */,
-				A813546623B5F786004B652D /* DanmakuConfiguration.m in Sources */,
-				7757711821C11345004E6A6C /* DanmakuConfiguration.m in Sources */,
-				77102B7921B65E1300DA2930 /* HomeSearchTitleView.m in Sources */,
+				A83CF8D223D58574002A5F5F /* UIButton+EnlargeTouchArea.m in Sources */,
 				A813546B23B5F786004B652D /* MediaPlayerProgressView.m in Sources */,
-				7757711721C11345004E6A6C /* DanmakuModel.m in Sources */,
 				A813544023B5F481004B652D /* EdgeInsetsLabel.m in Sources */,
 				77E7421D21B0DC0C00A5D754 /* ResponseSerializer.m in Sources */,
-				7757711C21C11345004E6A6C /* MediaPlayer.m in Sources */,
 				77FF905F21AFF05D009DDAD6 /* NavigationViewController.m in Sources */,
 				A82649BF23C6C91900AFAA23 /* HomeSegmentView.m in Sources */,
 				A85BB5A023BAE9D3007DEE82 /* HomeOuterModel.m in Sources */,
@@ -1127,7 +1010,6 @@
 				A8EBE6B521B28D2000B71D20 /* UserInfoModel.m in Sources */,
 				A850D4AD23BDD9E5004F7695 /* Video.m in Sources */,
 				A813543B23B5B212004B652D /* HomeHotTableViewCell.m in Sources */,
-				7757711A21C11345004E6A6C /* DanmakuRequest.m in Sources */,
 				A813546C23B5F786004B652D /* MediaPlayerControl.m in Sources */,
 				A813546A23B5F786004B652D /* MediaPlayer.m in Sources */,
 				77ABE88621BA12FA00D0B3E7 /* BannerView.m in Sources */,
@@ -1140,30 +1022,29 @@
 				77E7420D21B0D3C500A5D754 /* MenuViewController.m in Sources */,
 				A813548723B5FBC8004B652D /* VideoOwnerInfoModel.m in Sources */,
 				A813548623B5FBC8004B652D /* VideoInfoModel.m in Sources */,
+				A83CF8ED23D58A10002A5F5F /* DanmakuConfiguration.m in Sources */,
 				A8704F4721B290AE00EAF83D /* UserInfoViewModel.m in Sources */,
-				A813546923B5F786004B652D /* DanmakuControl.m in Sources */,
-				A813546723B5F786004B652D /* DanmakuLabel.m in Sources */,
 				77E7422621B116BD00A5D754 /* RequestCache.m in Sources */,
 				A813544723B5F523004B652D /* InspectableButton.m in Sources */,
 				A813546F23B5F7B8004B652D /* VideoPlayerViewController.m in Sources */,
 				77E7421621B0D3ED00A5D754 /* AppDelegate.m in Sources */,
+				A83CF8E923D589D9002A5F5F /* DanmakuRequest.m in Sources */,
 				A813548923B5FBC8004B652D /* VideoShowView.m in Sources */,
-				7757711D21C11345004E6A6C /* MediaPlayerProgressView.m in Sources */,
-				A813546423B5F786004B652D /* DanmakuEntity.m in Sources */,
 				A850D4AC23BDD9E5004F7695 /* VideoSid.m in Sources */,
 				77AAFB2B21BE6FB10057888C /* DiscoverVideoTableViewCell.m in Sources */,
 				A813544923B5F523004B652D /* InspectableView.m in Sources */,
 				A8704F4D21B290DE00EAF83D /* ConfigModel.m in Sources */,
 				A813548823B5FBC8004B652D /* VideoPageInfoModel.m in Sources */,
 				77AAFB2121BDFAF90057888C /* UIViewController+LifeCircle.m in Sources */,
-				7757711E21C11345004E6A6C /* MediaPlayerControl.m in Sources */,
 				A850D4B123BDDC76004F7695 /* DiscoverVideoViewModel.m in Sources */,
 				77ABE88B21BA1BF800D0B3E7 /* BannerModel.m in Sources */,
 				77AAFB2421BE03800057888C /* DiscoverVideoViewController.m in Sources */,
 				A813548523B5FBC8004B652D /* VideoStatisticsInfoModel.m in Sources */,
 				A8704F5021B291B100EAF83D /* ConfigViewModel.m in Sources */,
-				A813546523B5F786004B652D /* DanmakuModel.m in Sources */,
 				A813548423B5FBC8004B652D /* VideoURLViewModel.m in Sources */,
+				A83CF8E823D589D9002A5F5F /* DanmakuLabel.m in Sources */,
+				A83CF8EA23D589D9002A5F5F /* DanmakuControl.m in Sources */,
+				A83CF8E523D589D9002A5F5F /* DanmakuEntity.m in Sources */,
 				A850D4B623BDF361004F7695 /* FullView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

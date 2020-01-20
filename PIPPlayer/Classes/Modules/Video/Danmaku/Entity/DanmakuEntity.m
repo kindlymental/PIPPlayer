@@ -20,7 +20,6 @@
             return nil;
         }
         
-        
         _time = [parameters[0] doubleValue];
         NSInteger colorHex = [parameters[3] integerValue];
         _color = HexColor(colorHex);
@@ -39,9 +38,7 @@
             return nil;
         }
         
-        
         _font = Font(round([parameters[2] integerValue] / 2.0));
-        
     }
     return self;
 }

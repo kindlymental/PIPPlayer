@@ -24,6 +24,8 @@
 
 @implementation DanmakuModel
 
+/// 获取弹幕信息
+/// @param cid 视频id
 - (instancetype)initWithCid:(NSInteger)cid {
     self = [super init];
     if (!self) {
@@ -48,6 +50,7 @@
                         [mutableArray addObject:entity];
                     }
                 }
+                // 按时间筛选
                 [mutableArray sortUsingComparator:^NSComparisonResult(DanmakuEntity* _Nonnull obj1, DanmakuEntity* _Nonnull obj2) {
                     return obj1.time > obj2.time;
                 }];
@@ -55,42 +58,15 @@
             });
         }
     }];
-    
-//    [[DanmakuRequest requestWithCid:cid] startWithCompletionBlock:^(BaseRequest *request) {
-//        if (request.responseObject) {
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
-//                NSArray *array = [request.responseObject objectForKey:@"d"];
-//                NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:array.count];
-//                for (NSInteger i=0; i<array.count; i++) {
-//                    DanmakuEntity *entity = [[DanmakuEntity alloc] initWithDict:array[i]];
-//                    if (entity) {
-//                        [mutableArray addObject:entity];
-//                    }
-//                }
-//                [mutableArray sortUsingComparator:^NSComparisonResult(DanmakuEntity* _Nonnull obj1, DanmakuEntity* _Nonnull obj2) {
-//                    return obj1.time > obj2.time;
-//                }];
-//                _danmakuEntitys = [NSArray arrayWithArray:mutableArray];
-//            });
-//        }
-//    }];
-    
-    
     return self;
 }
 
-
-- (void)dealloc {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-
+/// 展示弹幕
+/// @param time 视频总时长
 - (NSArray<DanmakuEntity *> *)getDisplayDanmakuWithTime:(NSTimeInterval)time {
     if ([_danmakuEntitys count] == 0) {
         return NULL;
     }
-    
-    
     
     if (fabs(time - _lastTime) > 5) {
         for (NSInteger i=0; i<_danmakuEntitys.count; i++) {
@@ -104,7 +80,6 @@
         return @[];
     }
     _lastTime = time;
-    
     
     
     NSInteger idx = _index;

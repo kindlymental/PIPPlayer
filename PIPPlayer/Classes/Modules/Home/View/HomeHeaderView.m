@@ -28,6 +28,7 @@
 }
 
 - (void)initUI {
+
     self.backgroundColor = [UIColor whiteColor];
     
     [self addSubview:self.textLabel];

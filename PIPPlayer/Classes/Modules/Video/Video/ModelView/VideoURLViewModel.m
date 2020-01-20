@@ -43,6 +43,11 @@ NSMutableArray<VideoURLViewModel *> *__Queue;
     return self;
 }
 
+/// 请求视频的播放
+/// @param aid aid
+/// @param cid cid
+/// @param page page
+/// @param completionBlock 回调
 + (void)requestVideoURLWithAid:(NSInteger)aid cid:(NSInteger)cid page:(NSInteger)page completionBlock:(void (^)(NSURL *))completionBlock {
     
     if (!__Queue) {
@@ -72,15 +77,6 @@ NSMutableArray<VideoURLViewModel *> *__Queue;
     [downloadTask resume];
 }
 
-- (void)getVideoURLMode2 {
-//    [NSURLProtocol registerClass:[VideoURLProtocol class]];
-//    [self performSelector:@selector(webViewVideoURL:) withObject:NULL afterDelay:20];
-//    _webView = [[UIWebView alloc] init];
-//    NSString *urlString = [NSString stringWithFormat:@"http://www.bilibili.com/mobile/video/av%ld.html#page=%ld", _aid, _page];
-//    _webView.delegate = self;
-//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
-}
-
 - (void)completionWithURL:(NSURL *)url {
     _session = NULL;
     _completionBlock ? _completionBlock(url) : NULL;
@@ -101,9 +97,6 @@ NSMutableArray<VideoURLViewModel *> *__Queue;
     [dataTask cancel];
     [_session finishTasksAndInvalidate];
     completionHandler(NSURLSessionResponseCancel);
-    
-    [self getVideoURLMode2];
-    
 }
 
 @end

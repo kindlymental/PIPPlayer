@@ -104,12 +104,13 @@
 }
 
 - (void)displayDanmaku:(DanmakuEntity *)danmaku {
+    
     DanmakuLabel *label = [[DanmakuLabel alloc] init];
     label.delegate = self;
     [self addSubview:label];
     [_danmakuLabels addObject:label];
     
-    NSInteger index;
+    NSInteger index = 0;
     if (danmaku.type == DanmakuTypeNormal) {
         index = [self getNormalDanmakuDisplayIndex];
         [_normalDanmakuLabels replaceObjectAtIndex:index withObject:label];

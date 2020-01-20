@@ -7,6 +7,7 @@
 //
 
 #import "VideoShowView.h"
+#import "UIButton+EnlargeTouchArea.h"
 
 @interface VideoShowView ()
 
@@ -45,6 +46,8 @@
     _backButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_backButton];
     [_backButton addTarget:self action:@selector(backToPrePage) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_backButton setEnlargeEdge:4];   // 扩大点击范围
 }
 
 + (BOOL)requiresConstraintBasedLayout {
@@ -58,9 +61,9 @@
         make.centerY.equalTo(self).mas_offset(15);
     }];
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).mas_offset(10);
-        make.left.equalTo(self).mas_offset(10);
-        make.width.height.mas_offset(50);
+        make.top.equalTo(self).mas_offset(20);
+        make.left.equalTo(self).mas_offset(0);
+        make.width.height.mas_offset(40);
     }];
     
     [_backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {

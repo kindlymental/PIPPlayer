@@ -28,7 +28,7 @@
 /**
  请求视频地址
 
- @param aid keyId
+ @param cid keyId
  @param success 成功
  @param failure 失败
  */

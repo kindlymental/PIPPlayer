@@ -15,6 +15,10 @@
 
 @implementation VideoInfoViewModel
 
+/// 请求某视频的详情信息
+/// @param aid 视频id
+/// @param success 成功回调
+/// @param failure 失败回调
 - (void)requestVideoInfoWithVideoAid:(NSInteger)aid success:(void (^)(void))success failure:(void (^)(NSString *))failure {
     
     BaseRequest *request = [BaseRequest request];
@@ -48,6 +52,11 @@
     }];
 }
 
+
+/// 请求视频播放的id
+/// @param cid 视频id
+/// @param success 成功回调
+/// @param failure 失败回调
 - (void)requestVideoURLWithVideoCid:(NSInteger)cid success:(void (^)(NSURL *videoURL))success failure:(void (^)(NSString *errorMsg))failure {
     
     __block NSInteger page;

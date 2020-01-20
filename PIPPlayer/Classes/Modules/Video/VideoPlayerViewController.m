@@ -105,13 +105,12 @@
     }
     
     __weak __typeof(self)weakSelf = self;
+    
     [self.videoModel requestVideoURLWithVideoCid:_currentPage.cid success:^(NSURL *videoURL) {
         
         if (videoURL) {
-            // 测试地址
+          
             [MediaPlayer playerWithURL:[NSURL URLWithString:@"http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4"] cid:self->_currentPage.cid title:self->_currentPage.part inViewController:weakSelf];
-//            http://vjs.zencdn.net/v/oceans.mp4
-//            http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4
         }
     } failure:^(NSString *errorMsg) {
         

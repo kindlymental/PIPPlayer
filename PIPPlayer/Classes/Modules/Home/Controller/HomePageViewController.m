@@ -142,7 +142,8 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     VideoPlayerViewController *vc = [[VideoPlayerViewController alloc]init];
-    vc.aid = 37904664;
+    HomeHotModel *model = self.homeHotViewModel.homeModelArray[indexPath.section].body[indexPath.row];
+    vc.aid = [model.param integerValue];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -151,6 +152,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 - (void)loadData {
     
     RACSignal *signal = [self.homeHotViewModel.requestCommand execute:nil];
+    
     [signal subscribeNext:^(id  _Nullable x) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
