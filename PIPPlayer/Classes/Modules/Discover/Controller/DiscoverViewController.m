@@ -7,26 +7,16 @@
 //
 
 #import "DiscoverViewController.h"
-#import "BannerView.h"
-#import "BaseRequest.h"
-#import "BannerModel.h"
 #import "DiscoverVideoViewController.h"
 #import "MoviePlayerView.h"
 #import "DiscoverVideoTableViewCell.h"
 #import "DiscoverVideoViewModel.h"
 #import "FullViewController.h"
+#import "BaseRequest.h"
 
 @interface DiscoverViewController () <UITableViewDelegate,UITableViewDataSource,MoviePlayerViewDelegate>
 
-/** Banner */
-// Banner
-@property (nonatomic,strong) BannerView *bannerView;
-// banner数组
-@property (nonatomic,strong) NSMutableArray<BannerModel *> *bannerArray;
-
 @property (nonatomic,strong) UITableView *tableView;
-
-@property (nonatomic, strong) NSArray * videoSidArray; // videoSid数组
 
 @property (nonatomic, strong) MoviePlayerView *videoPlayer; // 播放器
 
@@ -52,10 +42,9 @@ static NSString *ID = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.bannerView];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bannerView.mas_bottom);
+        make.top.equalTo(self.view);
         make.left.right.bottom.equalTo(self.view);
     }];
     
@@ -98,15 +87,6 @@ static NSString *ID = @"cell";
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [_videoPlayer.player pause];
-    _videoPlayer.hidden = YES;
-//    VideoViewController *videoController = [VideoViewController shareVideoController];
-//    videoController.video = self.videoViewModel.videoArray[indexPath.row];
-//    [self.navigationController pushViewController:videoController animated:YES];
-}
-
 #pragma mark - 播放按钮点击事件
 - (void)playButtonAction:(UIButton *)sender {
     _videoPlayer.index = sender.tag - 100;
@@ -124,20 +104,22 @@ static NSString *ID = @"cell";
 #pragma mark - 横向全屏
 - (void)videoplayViewSwitchOrientation:(BOOL)isFull{
     if (isFull) {
+        __weak typeof(self) weakself = self;
         [self.navigationController presentViewController:self.fullVc animated:NO completion:^{
-            [self.fullVc.view addSubview:self.videoPlayer];
-            _videoPlayer.center = self.fullVc.view.center;
+            [weakself.fullVc.view addSubview:weakself.videoPlayer];
+            weakself.videoPlayer.center = weakself.fullVc.view.center;
             
             [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-                _videoPlayer.frame = self.fullVc.view.bounds;
+                weakself.videoPlayer.frame = weakself.fullVc.view.bounds;
 //                self.fmVideoPlayer.danmakuView.frame = self.fmVideoPlayer.frame;
                 
             } completion:nil];
         }];
     } else {
+        __weak typeof(self) weakself = self;
         [self.fullVc dismissViewControllerAnimated:NO completion:^{
-            [self.view addSubview:self.videoPlayer];
-            self.videoPlayer.frame = CGRectMake(0,  275 * _videoPlayer.index + kScreenWidth/5 + 50 , kScreenWidth, (kScreenWidth-20)/2);
+            [weakself.tableView addSubview:weakself.videoPlayer];
+            weakself.videoPlayer.frame = CGRectMake(0,  240 * weakself.videoPlayer.index + 40, kScreenWidth, 200);
         }];
     }
 
@@ -156,65 +138,7 @@ static NSString *ID = @"cell";
     }];
 }
 
-- (void)loadData {
-    
-    BaseRequest *request = [[BaseRequest alloc]init];
-    
-    [request requestWithURLString:@"http://app.bilibili.com/x/v2/show?actionKey=appkey&appkey=27eb53fc9058f8c3&build=3470&channel=appstore&device=phone&mobi_app=iphone&plat=1&platform=ios&sign=1c8f22ff72d7cab05a94eb8b12a4c4cc&ts=1469603875&warm=1" method:HTTPMethodGet parameters:nil completionBlock:^(BaseRequest *request) {
-        if (request.responseCode == 0) {
-            NSArray *arr = request.responseData;
-            NSArray *bannerData = [[arr[0] objectForKey:@"banner"] objectForKey:@"top"];
-            NSLog(@"%@",bannerData);
-            
-            for (NSDictionary *dic in bannerData) {
-                BannerModel *model = [BannerModel yy_modelWithDictionary:dic];
-                [self.bannerArray addObject:model];
-            }
-            
-            NSMutableArray *urlArr = [NSMutableArray array];
-            NSMutableArray *webArr = [NSMutableArray array];
-            for (BannerModel *model in self.bannerArray) {
-                [urlArr addObject:model.image];
-                [webArr addObject:model.uri];
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.bannerView.urls = urlArr.copy;
-                self.bannerView.webUrls = webArr.copy;
-            });
-        }
-    }];
-}
-
-#pragma mark - 视图出现和消失的时候调用
-
-- (void)startTimer {
-    [self.bannerView startTimer];
-}
-
-- (void)pauseTimer{
-    [self.bannerView pauseTimer];
-}
-
 #pragma mark - 懒加载
-
-- (BannerView *)bannerView {
-    if (!_bannerView) {
-        _bannerView = [[BannerView alloc]initBannerViewWithFrame:CGRectMake(0, 0, ScreenWidth, 0) imageUrls:nil webUrls:nil timerInterval:4 noDataImage:@"misc_battery_power_ico" didSelect:^(NSUInteger Index) {
-            if ((Index - 1) >= 0 && (Index - 1) < self->_bannerView.webUrls.count) {
-                NSLog(@"%@",self->_bannerView.webUrls[Index-1]);
-            }
-        }];
-    }
-    return _bannerView;
-}
-
-- (NSMutableArray<BannerModel *> *)bannerArray {
-    if (!_bannerArray) {
-        _bannerArray = [NSMutableArray array];
-    }
-    return _bannerArray;
-}
 
 - (DiscoverVideoViewModel *)videoViewModel {
     if (!_videoViewModel) {
@@ -240,6 +164,13 @@ static NSString *ID = @"cell";
         _videoPlayer.delegate = self;
     }
     return _videoPlayer;
+}
+
+- (FullViewController *)fullVc {
+    if (!_fullVc) {
+        _fullVc = [[FullViewController alloc]init];
+    }
+    return _fullVc;
 }
 
 @end

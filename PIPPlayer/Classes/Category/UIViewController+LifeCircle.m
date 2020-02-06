@@ -34,10 +34,9 @@
     
     NSString *className = NSStringFromClass([self class]);
     
-    // DiscoverViewController
-    if ([className isEqualToString:@"DiscoverViewController"]) {
+    if ([className isEqualToString:@"HomePageViewController"]) {
 //        Class disCoverVc = objc_getClass("DiscoverViewController");
-        //发送startTimer消息给disCoverVc
+        //发送startTimer消息给首页
         SEL startTimer = NSSelectorFromString(@"startTimer");
         ((void (*)(id, SEL))(void *) objc_msgSend)((id)self, startTimer);
     }
@@ -49,9 +48,8 @@
     
     NSString *className = NSStringFromClass([self class]);
     
-    // DiscoverViewController
-    if ([className isEqualToString:@"DiscoverViewController"]) {
-        //发送pauseTimer消息给disCoverVc
+    if ([className isEqualToString:@"HomePageViewController"]) {
+        //发送pauseTimer消息给首页
         SEL pauseTimer = NSSelectorFromString(@"pauseTimer");
         ((void (*)(id, SEL))(void *) objc_msgSend)((id)self, pauseTimer);
     }

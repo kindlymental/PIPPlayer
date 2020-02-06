@@ -9,13 +9,15 @@
 #import "HomePageViewController.h"
 #import "BannerView.h"
 #import "BaseRequest.h"
-#import "BannerModel.h"
-#import "HomeHotViewModel.h"
 #import "HomeHotTableViewCell.h"
 #import "HomeCollectionViewCell.h"
 #import "VideoPlayerViewController.h"
 #import "HomeHeaderView.h"
 #import "HomeSegmentView.h"
+#import "BannerView.h"
+#import "BannerViewModel.h"
+#import "HomeHotViewModel.h"
+#import "HomeRecommendViewModel.h"
 
 static NSString *collectionCellID = @"collectionCellID";
 static NSString *homeTableViewCellID = @"homeTableViewCellID";
@@ -28,8 +30,17 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UICollectionView *collectionView;
 
-/** 接受全部数据的数组 */
+/** Banner */
+// Banner
+@property (nonatomic,strong) BannerView *bannerView;
+// banner数组
+@property (nonatomic,strong) BannerViewModel *bannerViewModel;
+
+/** 热门数据 */
 @property (nonatomic,strong) HomeHotViewModel *homeHotViewModel;
+/** 推荐数据 */
+@property (nonatomic,strong) HomeRecommendViewModel *homeRecommendViewModel;
+
 
 @end
 
@@ -43,7 +54,9 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
     
     [self loadSubviews];
     
-    [self loadData];
+    [self loadHotData];
+    [self loadRecommendData];
+    [self loadBannerData];
 }
 
 #pragma mark - 界面布局
@@ -91,12 +104,8 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.homeHotViewModel.homeModelArray.count;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.homeHotViewModel.homeModelArray[section].body.count;
+    return self.homeRecommendViewModel.homeModelArray.count;
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -104,8 +113,8 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-    if (indexPath.row < self.homeHotViewModel.homeModelArray[indexPath.section].body.count) {
-        cell.model = self.homeHotViewModel.homeModelArray[indexPath.section].body[indexPath.row];
+    if (indexPath.row < self.homeRecommendViewModel.homeModelArray.count) {
+        cell.model = self.homeRecommendViewModel.homeModelArray[indexPath.row];
     }
     return cell;
 }
@@ -149,7 +158,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
 
 #pragma mark - 数据请求
 
-- (void)loadData {
+- (void)loadHotData {
     
     RACSignal *signal = [self.homeHotViewModel.requestCommand execute:nil];
     
@@ -157,9 +166,53 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+        });
+    }];
+}
+
+- (void)loadRecommendData {
+    
+    RACSignal *signal = [self.homeRecommendViewModel.requestCommand execute:nil];
+    
+    [signal subscribeNext:^(id  _Nullable x) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });
     }];
+}
+
+- (void)loadBannerData {
+    
+    RACSignal *signal = [self.bannerViewModel.requestCommand execute:nil];
+    
+    [signal subscribeNext:^(id  _Nullable x) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSMutableArray *urlArr = [NSMutableArray array];
+            NSMutableArray *webArr = [NSMutableArray array];
+            for (BannerModel *model in self.bannerViewModel.bannerModelArray) {
+                [urlArr addObject:model.image];
+                [webArr addObject:model.uri];
+            }
+            
+            self.bannerView.urls = urlArr.copy;
+            self.bannerView.webUrls = webArr.copy;
+            
+            self.tableView.tableHeaderView = self.bannerView;
+        });
+    }];
+}
+
+#pragma mark - 视图出现和消失的时候调用
+
+- (void)startTimer {
+    [self.bannerView startTimer];
+}
+
+- (void)pauseTimer{
+    [self.bannerView pauseTimer];
 }
 
 #pragma mark - 懒加载
@@ -169,6 +222,13 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         _homeHotViewModel = [[HomeHotViewModel alloc]init];
     }
     return _homeHotViewModel;
+}
+
+- (HomeRecommendViewModel *)homeRecommendViewModel {
+    if (!_homeRecommendViewModel) {
+        _homeRecommendViewModel = [[HomeRecommendViewModel alloc]init];
+    }
+    return _homeRecommendViewModel;
 }
 
 - (UIScrollView *)scrollView {
@@ -188,6 +248,8 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerNib:[UINib nibWithNibName:@"HomeHotTableViewCell" bundle:nil] forCellReuseIdentifier:homeTableViewCellID];
+        _tableView.tableHeaderView = self.bannerView;
+        _tableView.tableHeaderView.height = 200;
     }
     return _tableView;
 }
@@ -215,6 +277,24 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         _segmentView.delegate = self;
     }
     return _segmentView;
+}
+
+- (BannerView *)bannerView {
+    if (!_bannerView) {
+        _bannerView = [[BannerView alloc]initBannerViewWithFrame:CGRectMake(0, 0, ScreenWidth, 0) imageUrls:nil webUrls:nil timerInterval:4 noDataImage:@"misc_battery_power_ico" didSelect:^(NSUInteger Index) {
+            if ((Index - 1) >= 0 && (Index - 1) < self->_bannerView.webUrls.count) {
+                NSLog(@"%@",self->_bannerView.webUrls[Index-1]);
+            }
+        }];
+    }
+    return _bannerView;
+}
+
+- (BannerViewModel *)bannerViewModel {
+    if (!_bannerViewModel) {
+        _bannerViewModel = [[BannerViewModel alloc]init];
+    }
+    return _bannerViewModel;
 }
 
 @end

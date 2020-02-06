@@ -17,12 +17,12 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self setup];
+        [self requestData];  // 请求首页数据
     }
     return self;
 }
 
-- (void)setup {
+- (void)requestData {
     
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -50,5 +50,6 @@
         return signal;
     }];
 }
+
 
 @end

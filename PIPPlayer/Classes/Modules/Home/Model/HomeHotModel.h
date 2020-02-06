@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *gotoType;
 @property (nonatomic, assign) BOOL *is_ad;
 
+/** 推荐信息 */
+@property (nonatomic, copy) NSString *cover_left_text_1;
+@property (nonatomic, copy) NSString *cover_left_icon_1;
+@property (nonatomic, copy) NSString *cover_right_text;
+@property (nonatomic, strong) NSDictionary *desc_button;
+@property (nonatomic, strong) NSDictionary *args;
+
 @end
 
 NS_ASSUME_NONNULL_END

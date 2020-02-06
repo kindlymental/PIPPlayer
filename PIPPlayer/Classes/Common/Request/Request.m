@@ -140,25 +140,6 @@ NSString * MD5(NSString *str) {
     }
 }
 
-
-
-
-//- (void)willResume {}
-//
-//- (void)willReadCache {}
-//
-//- (BOOL)didReadCache { return YES; }
-//
-//- (void)completed {}
-//
-//- (void)success {}
-//
-//- (void)failure {}
-//
-//- (BOOL)willStoreCache { return YES; }
-
-
-
 #pragma mark - tool
 
 - (void)dynamicURLStringWithCallback:(void (^)(NSString *URLString, id parameters))callback;

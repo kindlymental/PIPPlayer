@@ -201,8 +201,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:urls forKey:@"bannerCache"];
     [defaults synchronize];
-    
-//    NSLog(@"%@",NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0]);
 }
 
 - (void)setIndex:(NSInteger)index {
