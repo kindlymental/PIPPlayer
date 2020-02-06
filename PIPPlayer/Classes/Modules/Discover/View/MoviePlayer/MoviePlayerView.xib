@@ -36,7 +36,7 @@
                             </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-0I-Z5k">
-                            <rect key="frame" x="46" y="7" width="224" height="31"/>
+                            <rect key="frame" x="46" y="7" width="219" height="31"/>
                             <connections>
                                 <action selector="sliderTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="lDS-Om-GPA"/>
                                 <action selector="sliderTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="LrK-if-2LX"/>
@@ -44,16 +44,16 @@
                             </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00/00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beD-88-y1M">
-                            <rect key="frame" x="282" y="13.5" width="82" height="17"/>
+                            <rect key="frame" x="277" y="13.5" width="82" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-cb-vFF">
-                            <rect key="frame" x="374" y="7" width="30" height="30"/>
+                            <rect key="frame" x="369" y="4.5" width="35" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="30" id="N4h-Ra-lkL"/>
-                                <constraint firstAttribute="height" constant="30" id="mpv-95-K68"/>
+                                <constraint firstAttribute="width" constant="35" id="N4h-Ra-lkL"/>
+                                <constraint firstAttribute="height" constant="35" id="mpv-95-K68"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" image="pegasus_feed_rectangle"/>

@@ -56,7 +56,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
     
     [self loadHotData];
     [self loadRecommendData];
-    [self loadBannerData];
+//    [self loadBannerData];
 }
 
 #pragma mark - 界面布局
@@ -182,28 +182,28 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
     }];
 }
 
-- (void)loadBannerData {
-    
-    RACSignal *signal = [self.bannerViewModel.requestCommand execute:nil];
-    
-    [signal subscribeNext:^(id  _Nullable x) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSMutableArray *urlArr = [NSMutableArray array];
-            NSMutableArray *webArr = [NSMutableArray array];
-            for (BannerModel *model in self.bannerViewModel.bannerModelArray) {
-                [urlArr addObject:model.image];
-                [webArr addObject:model.uri];
-            }
-            
-            self.bannerView.urls = urlArr.copy;
-            self.bannerView.webUrls = webArr.copy;
-            
-            self.tableView.tableHeaderView = self.bannerView;
-        });
-    }];
-}
+//- (void)loadBannerData {
+//
+//    RACSignal *signal = [self.bannerViewModel.requestCommand execute:nil];
+//
+//    [signal subscribeNext:^(id  _Nullable x) {
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            NSMutableArray *urlArr = [NSMutableArray array];
+//            NSMutableArray *webArr = [NSMutableArray array];
+//            for (BannerModel *model in self.bannerViewModel.bannerModelArray) {
+//                [urlArr addObject:model.image];
+//                [webArr addObject:model.uri];
+//            }
+//
+//            self.bannerView.urls = urlArr.copy;
+//            self.bannerView.webUrls = webArr.copy;
+//
+//            self.tableView.tableHeaderView = self.bannerView;
+//        });
+//    }];
+//}
 
 #pragma mark - 视图出现和消失的时候调用
 
@@ -248,8 +248,8 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerNib:[UINib nibWithNibName:@"HomeHotTableViewCell" bundle:nil] forCellReuseIdentifier:homeTableViewCellID];
-        _tableView.tableHeaderView = self.bannerView;
-        _tableView.tableHeaderView.height = 200;
+//        _tableView.tableHeaderView = self.bannerView;
+//        _tableView.tableHeaderView.height = 200;
     }
     return _tableView;
 }
@@ -263,7 +263,7 @@ static NSString *homeTableViewCellID = @"homeTableViewCellID";
         layout.itemSize = CGSizeMake(itemW, itemW);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.backgroundColor = [UIColor clearColor];
+        _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionCellID];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
